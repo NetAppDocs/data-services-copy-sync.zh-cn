@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-installing-aws.html 
 keywords: data broker, install, aws, networking, permissions, regions, install data broker in aws, install in aws, deploy in aws, deploy data broker in aws, cft, template, iam role, use your own iam role, regions, supported regions, networking requirements, port, ports, 443, port 443, ntp, network time protocol, permissions, iam role, iam permissions, aws data broker 
-summary: 创建新的数据代理时，选择 AWS Data Broker 选项在 VPC 中的新 EC2 实例上部署数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。 
+summary: 创建新的数据代理时，选择 AWS Data Broker 选项在 VPC 中的新 EC2 实例上部署数据代理软件。  NetApp Copy and Sync将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。 
 ---
-= 在 AWS 中为NetApp Copy and Sync 创建新的数据代理
+= 在 AWS 中为NetApp Copy and Sync创建新的数据代理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 创建新的数据代理时，选择 AWS Data Broker 选项在 VPC 中�
 
 
 [role="lead"]
-为NetApp Copy and Sync 创建新的数据代理组时，请选择 Amazon Web Services 在 VPC 中的新 EC2 实例上部署数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。
+为NetApp Copy and Sync创建新的数据代理组时，请选择 Amazon Web Services 在 VPC 中的新 EC2 实例上部署数据代理软件。  NetApp Copy and Sync将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。
 
 您还可以选择在云端或本地的现有 Linux 主机上安装数据代理。link:task-installing-linux.html["了解更多"] 。
 

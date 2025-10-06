@@ -4,7 +4,7 @@ permalink: task-uninstalling.html
 keywords: uninstall, uninstall data broker, remove data broker 
 summary: 如果需要，运行卸载脚本来删除数据代理以及安装数据代理时创建的包和目录。 
 ---
-= 卸载NetApp Copy and Sync 的数据代理
+= 卸载NetApp Copy and Sync的数据代理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 如果需要，运行卸载脚本来删除数据代理以及安装数�
 
 
 [role="lead"]
-如果需要，请运行卸载脚本以删除数据代理以及安装数据代理时为NetApp Copy and Sync 创建的软件包和目录。
+如果需要，请运行卸载脚本以删除数据代理以及安装数据代理时为NetApp Copy and Sync创建的软件包和目录。
 
 .步骤
 . 登录数据代理主机。

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-networking.html 
 keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
-summary: NetApp Copy and Sync 的网络包括数据代理组与源位置和目标位置之间的连接，以及通过端口 443 来自数据代理的出站互联网连接。 
+summary: NetApp Copy and Sync的网络包括数据代理组与源位置和目标位置之间的连接，以及通过端口 443 来自数据代理的出站互联网连接。 
 ---
-= NetApp复制和同步的网络概述
+= NetApp Copy and Sync的网络概述
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp Copy and Sync 的网络包括数据代理组与源位置和目�
 
 
 [role="lead"]
-NetApp Copy and Sync 的网络包括数据代理组与源位置和目标位置之间的连接，以及通过端口 443 来自数据代理的出站互联网连接。
+NetApp Copy and Sync的网络包括数据代理组与源位置和目标位置之间的连接，以及通过端口 443 来自数据代理的出站互联网连接。
 
 
 
@@ -106,7 +106,7 @@ NetApp数据代理需要通过端口 443 进行出站互联网访问，以便与
 | \ https://sts.amazonaws.com \ https://sts.us-east-1.amazonaws.com | 当数据代理部署在 AWS 中或部署在您的场所并提供 AWS 凭证时，验证 AWS 凭证。数据代理在部署、更新和重新启动时联系此端点。 
 
 
-| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com | 当您使用分类来选择新同步关系的源文件时，请联系NetApp数据分类。 
+| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com | 当您使用分类来选择新同步关系的源文件时，请联系NetApp Data Classification。 
 
 
 | \ https://pubsub.googleapis.com | 如果从 Google 存储帐户创建连续同步关系。 

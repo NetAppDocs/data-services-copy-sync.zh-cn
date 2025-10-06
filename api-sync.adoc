@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: api-sync.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
-summary: 可通过 Web UI 使用的NetApp复制和同步功能也可通过 RESTful API 使用。 
+summary: 可通过 Web UI 使用的NetApp Copy and Sync功能也可通过 RESTful API 使用。 
 ---
-= NetApp复制和同步 API
+= NetApp Copy and SyncAPI
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,16 @@ summary: 可通过 Web UI 使用的NetApp复制和同步功能也可通过 RESTf
 
 
 [role="lead"]
-可通过 Web UI 使用的NetApp复制和同步功能也可通过 RESTful API 使用。
+可通过 Web UI 使用的NetApp Copy and Sync功能也可通过 RESTful API 使用。
 
 
 
 == 开始使用
 
-要开始使用复制和同步 API，您需要获取用户令牌和NetApp控制台帐户 ID。进行 API 调用时，您需要将令牌和帐户 ID 添加到授权标头。
+要开始使用复制和同步 API，您需要获取用户令牌和NetApp Console帐户 ID。进行 API 调用时，您需要将令牌和帐户 ID 添加到授权标头。
 
 .步骤
-. 从NetApp控制台获取用户令牌。
+. 从NetApp Console获取用户令牌。
 +
 [source, http]
 ----
@@ -43,7 +43,7 @@ Body:
 
 NOTE: 如果您使用的是没有客户端 ID 的个人电子邮件帐户，则可以使用默认客户端 ID“QC3AgHk6qdbmC7Yyr82ApBwaaJLwRrNO”。
 
-. 获取您的NetApp控制台帐户 ID。
+. 获取您的NetApp Console帐户 ID。
 +
 [source, http]
 ----
@@ -69,7 +69,7 @@ Content-Type: application/json
 *例子*
 
 +
-以下示例显示在 Microsoft Azure 中创建数据代理的 API 调用。您只需将 <user_token> 和 <accountId> 替换为您在前面步骤中获得的令牌和 ID。
+以下示例展示了在 Microsoft Azure 中创建数据代理的 API 调用。您只需将 <user_token> 和 <accountId> 替换为您在前面步骤中获得的令牌和 ID。
 
 +
 [source, http]
@@ -83,7 +83,7 @@ Body: { "name": "databroker1", "type": "AZURE" }
 
 
 .下一步是什么？
-NetApp控制台中的用户令牌有一个到期日期。要刷新令牌，您需要再次调用步骤 1 中的 API。
+NetApp Console中的用户令牌有一个到期日期。要刷新令牌，您需要再次调用步骤 1 中的 API。
 
 API 响应包含一个“expires_in”字段，用于说明令牌何时过期。
 

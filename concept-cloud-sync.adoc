@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-cloud-sync.html 
 keywords: NetApp Copy and Sync, overview, conceptual, how, data broker, service, cloudsync, bluexp, copy and sync 
-summary: NetApp Copy and Sync 提供了一种简单、安全且自动化的方式，可将您的数据迁移到云端或本地的任何目标。 
+summary: NetApp Copy and Sync提供了一种简单、安全且自动化的方式，可将您的数据迁移到云端或本地的任何目标。 
 ---
-= 了解NetApp复制和同步
+= 了解NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,25 +14,25 @@ summary: NetApp Copy and Sync 提供了一种简单、安全且自动化的方�
 
 
 [role="lead"]
-NetApp Copy and Sync 提供了一种简单、安全且自动化的方式，可将您的数据迁移到云端或本地的任何目标。无论它是基于文件的 NAS 数据集（NFS 或 SMB）、Amazon Simple Storage Service (S3) 对象格式、 NetApp StorageGRID设备还是任何其他云提供商对象存储，Copy and Sync 都可以为您转换和移动它。
+NetApp Copy and Sync提供了一种简单、安全且自动化的方式，可将您的数据迁移到云端或本地的任何目标。无论它是基于文件的 NAS 数据集（NFS 或 SMB）、Amazon Simple Storage Service (S3) 对象格式、 NetApp StorageGRID设备还是任何其他云提供商对象存储，Copy and Sync 都可以为您转换和移动它。
 
 
 
-== NetApp控制台
+== NetApp Console
 
-可通过NetApp控制台访问NetApp Copy and Sync。
+可以通过NetApp Console访问NetApp Copy and Sync 。
 
-NetApp控制台提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
+NetApp Console提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
 
-您不需要许可证或订阅即可开始使用NetApp控制台，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
+您不需要许可证或订阅即可开始使用NetApp Console，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
 
-详细了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp控制台"]。
+详细了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
 
 
 
-== NetApp复制和同步的工作原理
+== NetApp Copy and Sync的工作原理
 
-NetApp Copy and Sync 是一个软件即服务 (SaaS) 平台，由数据代理组、可通过NetApp控制台访问的基于云的界面以及源和目标组成。
+NetApp Copy and Sync是一个软件即服务 (SaaS) 平台，由数据代理组、可通过NetApp Console访问的基于云的界面以及源和目标组成。
 
 下图显示了 Copy 和 Sync 组件之间的关系：
 

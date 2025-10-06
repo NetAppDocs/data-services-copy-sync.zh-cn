@@ -4,7 +4,7 @@ permalink: task-managing-reports.html
 keywords: reports, sync reports, NetApp Copy and Sync reports, report errors, path reports 
 summary: 创建和查看报告以获取信息，您可以在NetApp人员的帮助下使用这些信息来调整数据代理的配置并提高性能。 
 ---
-= 创建和查看报告以调整NetApp Copy and Sync 中的配置
+= 创建和查看报告以调整NetApp Copy and Sync中的配置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 创建和查看报告以获取信息，您可以在NetApp人员的帮�
 
 
 [role="lead"]
-在NetApp Copy and Sync 中创建和查看报告以获取信息，您可以在NetApp人员的帮助下使用这些信息来调整数据代理的配置并提高性能。
+在NetApp Copy and Sync中创建和查看报告以获取可在NetApp人员的帮助下调整数据代理的配置并提高性能的信息。
 
 每份报告都提供有关同步关系中路径的详细信息。它将包括有多少个目录、文件和符号链接、文件大小的分布、目录的深度和宽度、修改时间和访问时间。这与同步静态数据不同，后者可在 https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["成功创建并完成同步"]。
 

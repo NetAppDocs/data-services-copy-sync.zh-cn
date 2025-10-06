@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-quick-start.html 
 keywords: quick start, overview, deploying, getting started, get started, signing up, free trial 
-summary: 开始使用NetApp Copy and Sync 包括几个步骤。 
+summary: 开始使用NetApp Copy and Sync包括几个步骤。 
 ---
-= NetApp复制和同步快速入门
+= NetApp Copy and Sync快速入门
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 开始使用NetApp Copy and Sync 包括几个步骤。
 
 
 [role="lead"]
-开始使用NetApp Copy and Sync 包括几个步骤。
+开始使用NetApp Copy and Sync包括几个步骤。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"]登录并设置NetApp控制台
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"]登录并设置NetApp Console
 [role="quick-margin-para"]
-您应该已经开始使用NetApp控制台，其中包括登录、设置帐户以及可能部署控制台代理和创建系统。
+您应该已经开始使用NetApp Console，其中包括登录、设置帐户以及可能部署控制台代理和创建系统。
 
 [role="quick-margin-para"]
 如果您想要为以下任何一项创建同步关系，那么您首先需要创建或发现一个系统：
@@ -34,7 +34,7 @@ summary: 开始使用NetApp Copy and Sync 包括几个步骤。
 Cloud Volumes ONTAP、本地ONTAP集群和Amazon FSx for ONTAP都需要控制台代理。
 
 [role="quick-margin-list"]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["了解如何开始使用NetApp控制台"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["了解如何开始使用NetApp Console"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["了解有关控制台代理的更多信息"^]
 
 
@@ -49,10 +49,10 @@ Cloud Volumes ONTAP、本地ONTAP集群和Amazon FSx for ONTAP都需要控制台
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]为NetApp数据代理准备位置
 [role="quick-margin-para"]
-NetApp数据代理软件将数据从源同步到目标（这称为_同步关系_）。您可以在 AWS、Azure、Google Cloud Platform 或您的本地运行数据代理。由一个或多个数据代理组成的数据代理组需要通过端口 443 建立出站互联网连接，以便与NetApp Copy 和 Sync 通信并联系其他一些服务和存储库。link:reference-networking.html#networking-endpoints["查看端点列表"] 。
+NetApp数据代理软件将数据从源同步到目标（这称为_同步关系_）。您可以在 AWS、Azure、Google Cloud Platform 或您的本地运行数据代理。由一个或多个数据代理组成的数据代理组需要通过端口 443 建立出站互联网连接，以便与NetApp Copy and Sync并联系其他一些服务和存储库。link:reference-networking.html#networking-endpoints["查看端点列表"] 。
 
 [role="quick-margin-para"]
-当您创建同步关系时， NetApp Copy and Sync 会指导您完成安装过程，此时您可以在云中部署数据代理或为您自己的 Linux 主机下载安装脚本。
+当您创建同步关系时， NetApp Copy and Sync会指导您完成安装过程，此时您可以在云中部署数据代理或为您自己的 Linux 主机下载安装脚本。
 
 [role="quick-margin-list"]
 * link:task-installing-aws.html["检查 AWS 安装"]
@@ -63,8 +63,8 @@ NetApp数据代理软件将数据从源同步到目标（这称为_同步关系_
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"]创建您的第一个同步关系
 [role="quick-margin-para"]
-登录 https://console.netapp.com/["NetApp控制台"^]，选择*同步*，然后拖放源和目标的选择。按照提示完成设置。link:task-creating-relationships.html["了解更多"] 。
+登录 https://console.netapp.com/["NetApp Console"^]，选择*同步*，然后拖放源和目标的选择。按照提示完成设置。link:task-creating-relationships.html["了解更多"] 。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]免费试用期结束后，支付同步关系费用
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]免费试用结束后支付同步关系费用
 [role="quick-margin-para"]
-从 AWS 或 Azure 订阅，按使用量付费或按年付费。或者直接从NetApp购买许可证。只需转到NetApp Copy and Sync 中的“许可证设置”页面进行设置。link:task-licensing.html["了解更多"] 。
+从 AWS 或 Azure 订阅，按使用量付费或按年付费。或者直接从NetApp购买许可证。只需转到NetApp Copy and Sync中的“许可证设置”页面进行设置。link:task-licensing.html["了解更多"] 。

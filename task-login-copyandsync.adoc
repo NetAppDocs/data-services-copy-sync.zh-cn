@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-login-copyandsync.html 
 keywords: copy and sync, NetApp Copy and Sync, log in to Copy and Sync, NetApp BlueXP, BlueXP Copy and Sync, NetApp Console 
-summary: 使用NetApp控制台登录NetApp Copy and Sync。 
+summary: 使用NetApp Console登录到NetApp Copy and Sync。 
 ---
-= 登录NetApp复制和同步
+= 登录NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: 使用NetApp控制台登录NetApp Copy and Sync。
 
 
 [role="lead"]
-使用NetApp控制台登录NetApp Copy and Sync。
+使用NetApp Console登录到NetApp Copy and Sync。
 
 要登录控制台，您可以使用您的NetApp支持站点凭据，也可以使用您的电子邮件和密码注册NetApp云登录。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["了解有关登录的更多信息"^] 。
 
-NetApp Copy and Sync 使用身份访问管理来控制每个用户对特定操作的访问权限。
+NetApp Copy and Sync使用身份访问管理来控制每个用户对特定操作的访问权限。
 
-*必需的NetApp控制台角色* 组织管理员角色。 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解NetApp控制台访问角色"^] 。
+*必需的NetApp Console角色* 组织管理员角色。 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解NetApp Console访问角色"^] 。
 
 .步骤
-. 打开 Web 浏览器并转到 https://console.netapp.com/["NetApp控制台"^]。
+. 打开 Web 浏览器并转到 https://console.netapp.com/["NetApp Console"^]。
 +
-出现NetApp控制台登录页面。
+出现NetApp Console登录页面。
 
 . 登录控制台。
 . 从控制台左侧导航中，选择*移动性*>*复制和同步*。

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
-summary: 了解NetApp Copy and Sync 的新功能。 
+summary: 了解NetApp Copy and Sync的新功能。 
 ---
-= NetApp复制和同步的新功能
+= NetApp Copy and Sync的新功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 了解NetApp Copy and Sync 的新功能。
 
 
 [role="lead"]
-了解NetApp Copy and Sync 的新功能。
+了解NetApp Copy and Sync的新功能。
 
 
 
@@ -22,17 +22,17 @@ summary: 了解NetApp Copy and Sync 的新功能。
 
 
 
-=== BlueXP copy and sync现已更名NetApp复制和同步
+=== BlueXP copy and sync现已更名NetApp Copy and Sync
 
-BlueXP copy and sync已重命名为NetApp复制和同步。
+BlueXP copy and sync已重命名为NetApp Copy and Sync。
 
 
 
-=== BlueXP现在是NetApp控制台
+=== BlueXP现在是NetApp Console
 
-NetApp控制台建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp数据服务，提供实时洞察、更快的工作流程和简化的管理，并且高度安全且合规。
+NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp Data Services，提供实时洞察、更快的工作流程和简化的管理，并且高度安全且合规。
 
-有关更改的详细信息，请参阅link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp控制台发行说明"]。
+有关更改的详细信息，请参阅link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp Console发行说明"]。
 
 
 
@@ -54,7 +54,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === 错误修复
 
-我们更新了NetApp Copy and Sync 和数据代理以修复一些错误。新的数据代理版本是 1.0.56。
+我们更新了NetApp Copy and Sync和数据代理以修复一些错误。新的数据代理版本是 1.0.56。
 
 
 
@@ -64,7 +64,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === 错误修复
 
-我们更新了NetApp Copy and Sync 和数据代理以修复一些错误。新的数据代理版本是 1.0.55。
+我们更新了NetApp Copy and Sync和数据代理以修复一些错误。新的数据代理版本是 1.0.55。
 
 
 
@@ -74,7 +74,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === 错误修复
 
-我们更新了NetApp Copy and Sync 和数据代理以修复一些错误。新的数据代理版本是 1.0.54。
+我们更新了NetApp Copy and Sync和数据代理以修复一些错误。新的数据代理版本是 1.0.54。
 
 
 
@@ -94,7 +94,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === 错误修复
 
-NetApp Copy and Sync 已更新，修复了一些错误。数据代理也进行了更新以应用安全更新。新的数据代理版本是 1.0.52。
+NetApp Copy and Sync已更新，修复了一些错误。数据代理也进行了更新以应用安全更新。新的数据代理版本是 1.0.52。
 
 
 
@@ -104,7 +104,7 @@ NetApp Copy and Sync 已更新，修复了一些错误。数据代理也进行�
 
 === 支持 RHEL 8.9
 
-运行 Red Hat Enterprise Linux 8.9 的主机现在支持数据代理。
+数据代理现在在运行 Red Hat Enterprise Linux 8.9 的主机上受支持。
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-host-requirements["查看 Linux 主机要求"] 。
 
@@ -144,7 +144,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#creating
 
 === 更新数据代理的节点版本
 
-所有新的数据代理现在都将使用节点版本 21.2.0。与此更新不兼容的数据代理（例如 CentOS 7.0 和 Ubuntu Server 18.0）将不再与NetApp Copy 和 Sync 一起使用。
+所有新的数据代理现在都将使用节点版本 21.2.0。与此更新不兼容的数据代理（例如 CentOS 7.0 和 Ubuntu Server 18.0）将不再与NetApp Copy and Sync一起使用。
 
 
 
@@ -196,7 +196,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-azure.html["了�
 * cloudkms.keyRings.列表
 
 
-https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#google-cloud-storage-bucket-requirements["了解有关 Google Cloud Storage 存储桶要求的更多信息。"]
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#google-cloud-storage-bucket-requirements["详细了解 Google Cloud Storage 存储桶要求。"]
 
 
 
@@ -465,7 +465,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#
 
 您现在可以通过电子邮件接收Cloud Sync通知。
 
-为了通过电子邮件接收通知，您需要在同步关系上启用*通知*设置，然后在NetApp控制台中配置警报和通知设置。
+为了通过电子邮件接收通知，您需要在同步关系上启用*通知*设置，然后在NetApp Console中配置警报和通知设置。
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#setting-up-notifications["了解如何设置通知"] 。
 
@@ -506,9 +506,9 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships
 
 ==== 拖放
 
-现在，您可以通过将一个系统拖放到另一个系统上来从系统页面设置同步关系。
+您现在可以通过将一个系统拖放到另一个系统上来从系统页面设置同步关系。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["显示NetApp控制台中的通知中心的屏幕截图。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["显示NetApp Console中的通知中心的屏幕截图。"]
 
 
 
@@ -516,7 +516,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/s
 
 现在，您可以通过从系统页面选择系统，然后从右侧面板选择同步选项来为 Azure Blob 存储或 Google Cloud Storage 设置同步关系。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["显示NetApp控制台中的通知中心的屏幕截图。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["显示NetApp Console中的通知中心的屏幕截图。"]
 
 
 
@@ -637,7 +637,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#
 
 现在可以使用新的*通知*设置来同步关系。此设置使您可以选择是否在NetApp控制台的通知中心接收Cloud Sync通知。您可以启用数据同步成功、数据同步失败和数据同步取消的通知。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["显示NetApp控制台中的通知中心的屏幕截图。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["显示NetApp Console中的通知中心的屏幕截图。"]
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#change-the-settings-for-a-sync-relationship["了解有关更改同步关系设置的详细信息"] 。
 
@@ -842,7 +842,7 @@ link:task-managing-relationships.html["详细了解Cloud Sync设置"] 。
 
 === 附加 Box 支持
 
-Cloud Sync现在支持以下同步关系 https://www.box.com/home["盒子"^]使用Cloud Sync API 时：
+Cloud Sync现在支持以下附加同步关系 https://www.box.com/home["盒子"^]使用Cloud Sync API 时：
 
 * Amazon S3 到 Box
 * IBM 云对象存储到 Box
@@ -1002,9 +1002,9 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 === 独立Cloud Sync服务已停用
 
-独立的Cloud Sync服务已退役。您现在可以直接从NetApp控制台访问Cloud Sync，其中所有相同的特性和功能均可用。
+独立的Cloud Sync服务已退役。您现在可以直接从NetApp Console访问Cloud Sync，其中所有相同的特性和功能均可用。
 
-登录NetApp控制台后，您可以切换到顶部的“同步”选项卡并查看您的关系，就像以前一样。
+登录NetApp Console后，您可以切换到顶部的“同步”选项卡并查看您的关系，就像以前一样。
 
 
 

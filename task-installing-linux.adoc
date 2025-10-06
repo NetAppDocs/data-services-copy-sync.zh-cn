@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-installing-linux.html 
 keywords: data broker, install, linux, on-prem data broker, on-prem, on prem, on premises, networking, permissions, os, operating system, rhel, red hat, ram, cpu, disk space, install data broker, installing data broker, install a data broker, data broker installation, linux installation, linux operating system, aws access, aws keys, keys, gcp access, aws permissions, gcp permissions, google permissions 
-summary: 创建新的数据代理时，请选择 On-Prem Data Broker 选项在本地 Linux 主机或云中的现有 Linux 主机上安装数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。 
+summary: 创建新的数据代理时，请选择 On-Prem Data Broker 选项在本地 Linux 主机或云中的现有 Linux 主机上安装数据代理软件。  NetApp Copy and Sync将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。 
 ---
-= 在 Linux 主机上安装用于NetApp复制和同步的数据代理
+= 在 Linux 主机上安装用于NetApp Copy and Sync的数据代理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 创建新的数据代理时，请选择 On-Prem Data Broker 选项在�
 
 
 [role="lead"]
-为NetApp Copy and Sync 创建新的数据代理组时，请选择 On-Prem Data Broker 选项在本地 Linux 主机或云中的现有 Linux 主机上安装数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。
+为NetApp Copy and Sync创建新的数据代理组时，请选择 On-Prem Data Broker 选项在本地 Linux 主机或云中的现有 Linux 主机上安装数据代理软件。  NetApp Copy and Sync将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。
 
 
 
@@ -164,7 +164,7 @@ NOTE: 该用户必须是本地用户。不支持域用户。
 `curl <URI> -o data_broker_installer.sh -x <proxy_username>:<proxy_password>@<proxy_host>:<proxy_port>`
 
 +
-URI:: 复制和同步会在说明页面上显示安装文件的 URI，当您按照提示部署 On-Prem 数据代理时，该 URI 会加载。该 URI 不会在此重复，因为链接是动态生成的并且只能使用一次。<<安装数据代理,按照以下步骤从复制和同步中获取 URI>> 。
+URI:: 复制和同步会在说明页面上显示安装文件的 URI，当您按照提示部署 On-Prem 数据代理时，该页面会加载。该 URI 不会在此重复，因为链接是动态生成的并且只能使用一次。<<安装数据代理,按照以下步骤从复制和同步中获取 URI>> 。
 
 
 

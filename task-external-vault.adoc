@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-external-vault.html 
 keywords: hashicorp, vault, credentials, secrets, API 
-summary: 当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步关系时，您需要通过NetApp Copy and Sync 用户界面或 API 指定这些凭据。另一种方法是设置数据代理以直接从外部 HashiCorp Vault 访问凭据。 
+summary: 当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步关系时，您需要通过NetApp Copy and Sync用户界面或 API 指定这些凭据。另一种方法是设置数据代理以直接从外部 HashiCorp Vault 访问凭据。 
 ---
-= 设置数据代理组以在NetApp Copy and Sync 中使用外部 HashiCorp Vault
+= 设置数据代理组以在NetApp Copy and Sync中使用外部 HashiCorp Vault
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步�
 
 
 [role="lead"]
-当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步关系时，您需要通过NetApp Copy and Sync 用户界面或 API 指定这些凭据。另一种方法是设置数据代理组以直接从外部 HashiCorp Vault 访问凭据（或_秘密_）。
+当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步关系时，您需要通过NetApp Copy and Sync用户界面或 API 指定这些凭据。另一种方法是设置数据代理组以直接从外部 HashiCorp Vault 访问凭据（或_秘密_）。
 
 此功能通过复制和同步 API 支持，同步关系需要 Amazon S3、Azure 或 Google Cloud 凭证。
 
@@ -141,7 +141,7 @@ Secretid 和 rootid::
 +
 --
 ** 类型：字符串
-** 您的命名空间（如果需要，请使用 X-Vault-Namespace 标头）
+** 您的命名空间（如果需要，请输入 X-Vault-Namespace 标头）
 
 
 --
@@ -229,7 +229,7 @@ x-netapp-external-request-id-src: request ID as part of path for source credenti
 x-netapp-external-request-id-trg: request ID as part of path for target credentials
 Body: post relationship v2 body
 ....
-* 要获取用户令牌和您的NetApp控制台帐户 ID，link:api-sync.html["请参阅文档中的此页面"] 。
+* 要获取用户令牌和您的NetApp Console帐户 ID，link:api-sync.html["请参阅文档中的此页面"] 。
 * 为了在恋爱后拥有好身材， https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["参考 relationships-v2 API 调用"^] 。
 
 

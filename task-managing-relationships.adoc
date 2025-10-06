@@ -4,7 +4,7 @@ permalink: task-managing-relationships.html
 keywords: sync, immediate, now, schedule, minutes, hours, on, off, delete, group, accelerate, accelerating, grouping, multiple data brokers, sync now, turn off, turn on, sync schedule, settings, change settings, recently modified files, delete files on target, retries, retry, file types, exclude file type, include file type, delete relationship 
 summary: 您可以随时通过立即同步数据、更改计划等来管理同步关系。 
 ---
-= 在NetApp Copy and Sync 中管理同步关系
+= 在NetApp Copy and Sync中管理同步关系
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以随时通过立即同步数据、更改计划等来管理同�
 
 
 [role="lead"]
-您可以随时通过立即同步数据、更改计划等来管理NetApp Copy and Sync 中的同步关系。
+您可以随时通过立即同步数据、更改计划等来管理NetApp Copy and Sync中的同步关系。
 
 
 
@@ -90,7 +90,7 @@ image:screenshot_sync_update_credentials.png["屏幕截图显示了同步关系�
 
 每个同步关系的*通知*设置使您可以选择是否在NetApp控制台的通知中心接收复制和同步通知。您可以启用数据同步成功、数据同步失败和数据同步取消的通知。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["显示NetApp控制台中的通知中心的屏幕截图。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["显示NetApp Console中的通知中心的屏幕截图。"]
 
 此外，您还可以通过电子邮件接收通知。
 
@@ -113,7 +113,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/s
 
 
 .结果
-如果您配置了该选项，您现在将在NetApp控制台的通知中心收到复制和同步通知，并通过电子邮件发送一些通知。
+如果您配置了该选项，您现在将在NetApp控制台的通知中心收到复制和同步通知，其中还有一些通知通过电子邮件发送。
 
 
 

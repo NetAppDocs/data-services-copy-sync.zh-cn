@@ -4,7 +4,7 @@ permalink: reference-requirements.html
 keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions, box 
 summary: 验证您的源和目标是否满足以下要求。 
 ---
-= 在NetApp Copy and Sync 中准备源和目标
+= 在NetApp Copy and Sync中准备源和目标
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 验证您的源和目标是否满足以下要求。
 
 
 [role="lead"]
-验证您的源和目标是否满足NetApp Copy and Sync 中的以下要求。
+验证您的源和目标是否满足NetApp Copy and Sync中的以下要求。
 
 
 

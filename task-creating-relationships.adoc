@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-creating-relationships.html 
 keywords: sync, relationship, create, tags, settings, create a relationship, creating relationships, bucket setup, tags, bluexp, copy and sync 
-summary: 当您创建同步关系时， NetApp Copy and Sync 会将文件从源复制到目标。初始复制后，该服务每 24 小时同步一次任何更改的数据。 
+summary: 当您创建同步关系时， NetApp Copy and Sync会将文件从源复制到目标。初始复制后，该服务每 24 小时同步一次任何更改的数据。 
 ---
-= 在NetApp Copy and Sync 中创建同步关系
+= 在NetApp Copy and Sync中创建同步关系
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 当您创建同步关系时， NetApp Copy and Sync 会将文件从源�
 
 
 [role="lead"]
-当您创建同步关系时， NetApp Copy and Sync 会将文件从源复制到目标。初始复制后，复制和同步每 24 小时同步一次任何更改的数据。
+当您创建同步关系时， NetApp Copy and Sync会将文件从源复制到目标。初始复制后，复制和同步每 24 小时同步一次任何更改的数据。
 
-在创建某些类型的同步关系之前，您首先需要在NetApp控制台中创建一个系统。
+在创建某些类型的同步关系之前，您首先需要在NetApp Console中创建一个系统。
 
 
 
@@ -58,7 +58,7 @@ image:screenshot_sync_we.gif["屏幕截图显示了选择系统后同步菜单�
 
 使用这些步骤将数据同步到或同步自除Amazon FSx for ONTAP、 Azure NetApp Files、 Cloud Volumes ONTAP或本地ONTAP集群之外的受支持的存储类型。以下步骤提供了一个示例，展示了如何设置从 NFS 服务器到 S3 存储桶的同步关系。
 
-. 在NetApp控制台中，选择 *同步*。
+. 在NetApp Console中，选择 *同步*。
 . 在*定义同步关系*页面上，选择源和目标。
 +
 以下步骤提供了如何创建从 NFS 服务器到 S3 存储桶的同步关系的示例。
@@ -251,12 +251,12 @@ TIP: 将数据同步到StorageGRID和 IBM Cloud Object Storage 时，此功能�
 
 
 
-== 从NetApp数据分类创建同步关系
+== 从NetApp Data Classification创建同步关系
 
-复制和同步与NetApp数据分类集成。在NetApp数据分类中，您可以选择要使用复制和同步同步到目标位置的源文件。
+复制和同步与NetApp Data Classification。在NetApp Data Classification中，您可以选择要使用复制和同步同步到目标位置的源文件。
 
-从NetApp数据分类启动数据同步后，所有源信息都包含在一个步骤中，只需要您输入一些关键详细信息。然后，选择新同步关系的目标位置。
+从NetApp Data Classification启动数据同步后，所有源信息都包含在一个步骤中，只需要您输入一些关键详细信息。然后，选择新同步关系的目标位置。
 
-image:screenshot-sync-data-sense.png["屏幕截图显示了直接从NetApp数据分类启动新同步后出现的NetApp数据分类集成页面。"]
+image:screenshot-sync-data-sense.png["屏幕截图显示了直接从NetApp Data ClassificationNetApp Data Classification分类集成页面。"]
 
-https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["了解如何从NetApp数据分类启动同步关系"^] 。
+https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["了解如何从NetApp Data Classification启动同步关系"^] 。

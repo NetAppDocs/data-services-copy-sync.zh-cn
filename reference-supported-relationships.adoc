@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-supported-relationships.html 
 keywords: supported sync relationships, support, supported target, supported source 
-summary: NetApp Copy and Sync 使您能够将数据从源同步到目标。这被称为同步关系。在开始之前您应该了解所支持的关系。 
+summary: NetApp Copy and Sync使您能够将数据从源同步到目标。这被称为同步关系。在开始之前您应该了解所支持的关系。 
 ---
-= NetApp Copy and Sync 中支持的同步关系
+= NetApp Copy and Sync中支持的同步关系
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp Copy and Sync 使您能够将数据从源同步到目标。这�
 
 
 [role="lead"]
-NetApp Copy and Sync 使您能够将数据从源同步到目标。这被称为同步关系。在开始之前您应该了解所支持的关系。
+NetApp Copy and Sync使您能够将数据从源同步到目标。这被称为同步关系。在开始之前您应该了解所支持的关系。
 
 [cols="20,25"]
 |===

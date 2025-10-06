@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-privacy.html 
 keywords: privacy, data privacy, credentials, access to credentials, hashicorp vault 
-summary: NetApp无法访问您在使用NetApp Copy and Sync 时提供的任何凭据。凭证直接存储在位于您的网络中的数据代理机器上。 
+summary: NetApp无法访问您在使用NetApp Copy and Sync时提供的任何凭据。凭证直接存储在位于您的网络中的数据代理机器上。 
 ---
-= NetApp复制和同步中的数据隐私
+= NetApp Copy and Sync中的数据隐私
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp无法访问您在使用NetApp Copy and Sync 时提供的任何�
 
 
 [role="lead"]
-NetApp无法访问您在使用NetApp Copy and Sync 时提供的任何凭据。凭证直接存储在位于您的网络中的数据代理机器上。
+NetApp无法访问您在使用NetApp Copy and Sync时提供的任何凭据。凭证直接存储在位于您的网络中的数据代理机器上。
 
 根据您选择的配置，当您创建新的关系时，“复制和同步”可能会提示您输入凭据。例如，在设置包含 SMB 服务器的关系时，或在 AWS 中部署数据代理时。
 

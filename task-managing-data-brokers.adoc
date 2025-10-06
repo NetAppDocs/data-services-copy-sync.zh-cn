@@ -4,7 +4,7 @@ permalink: task-managing-data-brokers.html
 keywords: manage data brokers, manage data broker groups, data broker performance, data broker configuration, data broker removal, remove data broker, delete data broker, groups, data broker group, rename data broker group, add data broker, data broker cpu, data broker ram, data broker status, edit group name, change group name, modify group name 
 summary: 数据代理将数据从源位置同步到目标位置。您创建的每个同步关系都需要一个数据代理。通过将新的数据代理添加到组、查看有关数据代理的信息等来管理数据代理。 
 ---
-= 在NetApp Copy and Sync 中管理数据代理组
+= 在NetApp Copy and Sync中管理数据代理组
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 数据代理将数据从源位置同步到目标位置。您创建的�
 
 
 [role="lead"]
-NetApp Copy and Sync 中的数据代理组将数据从源位置同步到目标位置。对于您创建的每个同步关系，组中至少需要一个数据代理。通过向组添加新的数据代理、查看有关组的信息等方式来管理数据代理组。
+NetApp Copy and Sync中的数据代理组将数据从源位置同步到目标位置。对于您创建的每个同步关系，组中至少需要一个数据代理。通过向组添加新的数据代理、查看有关组的信息等方式来管理数据代理组。
 
 
 
