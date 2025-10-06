@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations.html 
+keywords: limitations, china, unsupported regions 
+summary: 已知限制标识了该产品的此版本不支持或不能与其正确互操作的平台、设备或功能。仔细审查这些限制。 
+---
+= NetApp复制和同步的限制
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+已知限制标识了该产品的此版本不支持或不能与其正确互操作的平台、设备或功能。仔细审查这些限制。
+
+以下区域不支持NetApp Copy and Sync：
+
+* AWS 政府区域
+* Azure 政府区域
+* 中国
+

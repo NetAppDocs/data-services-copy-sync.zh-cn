@@ -1,0 +1,90 @@
+---
+settings:
+  name: NetApp Copy and Sync
+  harmony_integration: maestro
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
+sidebar:
+  entries:
+  - title: NetApp复制和同步文档
+    url: "/index.html"
+  - title: 发行说明
+    entries:
+    - title: 什么是新的
+      url: "/whats-new.html"
+    - title: 限制
+      url: "/reference-limitations.html"
+  - title: 开始使用
+    entries:
+    - title: 了解NetApp复制和同步
+      url: "/concept-cloud-sync.html"
+    - title: 快速启动
+      url: "/task-quick-start.html"
+    - title: 查看支持的同步关系
+      url: "/reference-supported-relationships.html"
+    - title: 准备源和目标
+      url: "/reference-requirements.html"
+    - title: 准备网络
+      url: "/reference-networking.html"
+    - title: 登录NetApp复制和同步
+      url: "/task-login-copyandsync.html"
+    - title: 安装数据代理
+      entries:
+      - title: 在 AWS 中安装
+        url: "/task-installing-aws.html"
+      - title: 在 Azure 中安装
+        url: "/task-installing-azure.html"
+      - title: 在 Google Cloud 中安装
+        url: "/task-installing-gcp.html"
+      - title: 在 Linux 主机上安装
+        url: "/task-installing-linux.html"
+  - title: 使用NetApp复制和同步
+    entries:
+    - title: 在源和目标之间同步数据
+      entries:
+      - title: 准备数据代理以在对象存储之间同步数据
+        url: "/task-prepare-object-storage.html"
+      - title: 创建同步关系
+        url: "/task-creating-relationships.html"
+      - title: 从 SMB 共享复制 ACL
+        url: "/task-copying-acls.html"
+      - title: 加密传输中的 NFS 数据
+        url: "/task-nfs-encryption.html"
+      - title: 使用 HashiCorp Vault 中的机密
+        url: "/task-external-vault.html"
+    - title: 设置许可
+      url: "/task-licensing.html"
+    - title: 管理同步关系
+      url: "/task-managing-relationships.html"
+    - title: 管理数据经纪人
+      url: "/task-managing-data-brokers.html"
+    - title: 查看报告以调整您的配置
+      url: "/task-managing-reports.html"
+    - title: 卸载数据代理
+      url: "/task-uninstalling.html"
+  - title: 使用 REST API 实现自动化
+    url: "/api-sync.html"
+  - title: 概念
+    entries:
+    - title: 许可
+      url: "/concept-licensing.html"
+    - title: 数据隐私
+      url: "/concept-privacy.html"
+    - title: 常见问题解答
+      url: "/faq.html"
+  - title: 知识和支持
+    entries:
+    - title: 注册以获得支持
+      url: "/task-support-registration.html"
+    - title: 获取帮助
+      url: "/task-get-help.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

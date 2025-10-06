@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task-managing-reports.html 
+keywords: reports, sync reports, NetApp Copy and Sync reports, report errors, path reports 
+summary: 创建和查看报告以获取信息，您可以在NetApp人员的帮助下使用这些信息来调整数据代理的配置并提高性能。 
+---
+= 创建和查看报告以调整NetApp Copy and Sync 中的配置
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在NetApp Copy and Sync 中创建和查看报告以获取信息，您可以在NetApp人员的帮助下使用这些信息来调整数据代理的配置并提高性能。
+
+每份报告都提供有关同步关系中路径的详细信息。它将包括有多少个目录、文件和符号链接、文件大小的分布、目录的深度和宽度、修改时间和访问时间。这与同步静态数据不同，后者可在 https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["成功创建并完成同步"]。
+
+
+
+== 创建报告
+
+每次创建报告时，“复制和同步”都会扫描路径，然后将详细信息编译成报告。
+
+.步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 选择*同步 > 报告*。
++
+每个同步关系中的路径（源或目标）显示在一个表中。
+
+. 在*报告操作*列中，转到特定路径并选择*创建*，或选择操作菜单并选择*新建*。
+. 报告准备好后，选择操作菜单并选择*查看*。
++
+这是文件系统路径的示例报告。
+
++
+image:screenshot_sync_report.gif["显示同步项目数量、文件大小、最大值、访问时间、更改时间和修改时间的报告。"]
+
++
+这是对象存储的示例报告。
+
++
+image:screenshot_sync_report_object.gif["显示路径项数量、对象大小、修改时间和存储类别的报告。"]
+
+
+
+
+
+== 下载报告
+
+您可以下载 PDF 格式的报告，以便离线查看或共享。
+
+.步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 选择*同步 > 报告*。
+. 在*报告操作*列中，选择操作菜单并选择*查看*。
+. 在报告的右上角，选择操作菜单并选择*下载 pdf*。
++
+image:screenshot-sync-download-report.png["在报告中选择操作菜单后出现的下载 PDF 选项的屏幕截图。"]
+
+
+
+
+
+== 查看报告错误
+
+路径表标识最新报告中是否存在任何错误。错误标识了复制和同步在扫描路径时遇到的问题。
+
+例如，报告可能包含权限被拒绝的错误。此类错误会影响复制和同步扫描整个文件和目录的能力。
+
+查看错误列表后，您可以解决问题并再次运行报告。
+
+.步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 选择*同步 > 报告*。
+. 在“*错误*”列中，标识报告中是否存在任何错误。
+. 如果存在错误，请选择错误数量旁边的箭头。
++
+image:screenshot_sync_report_errors.gif["路径表的屏幕截图显示了错误的数量以及错误列中的一个可点击的小箭头。"]
+
+. 使用错误中的信息来纠正问题。
++
+解决问题后，下次运行报告时就不会再出现该错误。
+
+
+
+
+
+== 删除报告
+
+如果报告包含您已修复的错误，或者报告与您已删除的同步关系相关，您可以删除该报告。
+
+.步骤
+. 选择*同步 > 报告*。
+. 在*报告操作*列中，选择路径的操作菜单，然后选择*删除最后一份报告*或*删除所有报告*。
+. 确认您要删除该报告或这些报告。
+

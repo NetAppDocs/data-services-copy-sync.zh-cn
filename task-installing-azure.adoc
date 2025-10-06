@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: task-installing-azure.html 
+keywords: data broker, install, azure, networking, permissions, regions, install data broker in azure, install in azure, deploy in azure, deploy data broker in azure, networking requirements, port, ports, 443, port 443, ntp, network time protocol, azure data broker 
+summary: 创建新的数据代理时，选择 Azure 数据代理选项在 VNet 中的新虚拟机上部署数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。 
+---
+= 在 Azure 中为NetApp复制和同步创建新的数据代理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+为NetApp Copy and Sync 创建新的数据代理组时，请选择 Microsoft Azure 在 VNet 中的新虚拟机上部署数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。
+
+您还可以选择在云端或本地的现有 Linux 主机上安装数据代理。link:task-installing-linux.html["了解更多"] 。
+
+
+
+== 支持的 Azure 区域
+
+除中国、美国政府和美国国防部地区外，所有地区均受支持。
+
+
+
+== Root权限
+
+数据代理软件在 Linux 主机上自动以 root 身份运行。以 root 身份运行是数据代理操作的必要条件。例如，挂载共享。
+
+
+
+== 网络要求
+
+* 数据代理需要出站互联网连接，以便它可以通过端口 443 轮询复制和同步服务的任务。
++
+当 Copy and Sync 在 Azure 中部署数据代理时，它会创建一个安全组来启用所需的出站通信。
+
++
+如果需要限制出站连接，请参阅link:reference-networking.html["数据代理联系的端点列表"]。
+
+* NetApp建议配置源、目标和数据代理以使用网络时间协议 (NTP) 服务。三个组件之间的时间差不应超过5分钟。
+
+
+
+
+== 在 Azure 中部署数据代理所需的权限
+
+确保用于部署数据代理的 Azure 用户帐户具有以下权限：
+
+[source, json]
+----
+{
+    "Name": "Azure Data Broker",
+    "Actions": [
+					"Microsoft.Resources/subscriptions/read",
+                    "Microsoft.Resources/deployments/operationstatuses/read",
+                    "Microsoft.Resources/subscriptions/locations/read",
+                    "Microsoft.Network/networkInterfaces/read",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/delete",
+                    "Microsoft.Resources/deployments/write",
+                    "Microsoft.Resources/deployments/validate/action",
+                    "Microsoft.Resources/deployments/operationStatuses/read",
+                    "Microsoft.Resources/deployments/cancel/action",
+                    "Microsoft.Compute/virtualMachines/read",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Compute/disks/delete",
+                    "Microsoft.Network/networkInterfaces/delete",
+                    "Microsoft.Network/publicIPAddresses/delete",
+                    "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Network/networkSecurityGroups/write",
+                    "Microsoft.Network/networkSecurityGroups/join/action",
+                    "Microsoft.Compute/disks/write",
+                    "Microsoft.Network/networkInterfaces/write",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/publicIPAddresses/write",
+                    "Microsoft.Compute/virtualMachines/write",
+                    "Microsoft.Compute/virtualMachines/extensions/write",
+                    "Microsoft.Resources/deployments/read",
+                    "Microsoft.Network/networkSecurityGroups/read",
+                    "Microsoft.Network/publicIPAddresses/read",
+                    "Microsoft.Network/virtualNetworks/subnets/join/action",
+                    "Microsoft.Network/publicIPAddresses/join/action",
+                    "Microsoft.Network/networkInterfaces/join/action",
+                    "Microsoft.Storage/storageAccounts/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/write",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/delete",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action",
+                    "Microsoft.EventGrid/systemTopics/read",
+                    "Microsoft.EventGrid/systemTopics/write",
+                    "Microsoft.EventGrid/systemTopics/delete",
+                    "Microsoft.EventGrid/eventSubscriptions/write",
+                    "Microsoft.Storage/storageAccounts/write"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+                    "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        	        "Microsoft.Network/networkSecurityGroups/read",
+----
+....
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure Data Broker",
+    "IsCustom": "true"
+}
+....
+注:
+
+. 仅当您计划启用 https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["连续同步设置"]从 Azure 到另一个云存储位置的同步关系：
++
+** “Microsoft.Storage/storageAccounts/read”，
+** “Microsoft.EventGrid/systemTopics/eventSubscriptions/write”，
+** “Microsoft.EventGrid/systemTopics/eventSubscriptions/read”，
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/delete'，
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action'，
+** “Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action”，
+** “Microsoft.EventGrid/systemTopics/读取”，
+** “Microsoft.EventGrid/systemTopics/write”，
+** “Microsoft.EventGrid/systemTopics/删除”，
+** “Microsoft.EventGrid/eventSubscriptions/write”，
+** “Microsoft.Storage/storageAccounts/write”
+
+
++
+此外，如果您计划在 Azure 中实现连续同步，则必须将可分配范围设置为订阅范围而不是资源组范围。
+
+. 仅当您计划为数据代理创建选择自己的安全性时才需要以下权限：
++
+** “Microsoft.Network/networkSecurityGroups/securityRules/读取”
+** “Microsoft.Network/networkSecurityGroups/读取”
+
+
+
+
+
+
+== 身份验证方法
+
+部署数据代理时，您需要为虚拟机选择一种身份验证方法：密码或 SSH 公钥-私钥对。
+
+有关创建密钥对的帮助，请参阅 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys["Azure 文档：在 Azure 中为 Linux VM 创建并使用 SSH 公钥-私钥对"^]。
+
+
+
+== 创建数据代理
+
+有几种方法可以创建新的数据代理。这些步骤描述了在创建同步关系时如何在 Azure 中安装数据代理。
+
+.步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 选择*创建新同步*。
+. 在*定义同步关系*页面上，选择源和目标，然后选择*继续*。
++
+完成这些步骤，直到到达*数据经纪人组*页面。
+
+. 在“数据代理组”页面上，选择“创建数据代理”，然后选择“Microsoft Azure”。
++
+image:screenshot-azure.png["数据代理页面的屏幕截图，可让您在 AWS、Azure、Google Cloud 和 On-Prem 数据代理之间进行选择。"]
+
+. 输入数据代理的名称并选择*继续*。
+. 如果出现提示，请登录您的 Microsoft 帐户。如果没有提示，请选择“登录 Azure”。
++
+该表单由 Microsoft 拥有并托管。您的凭据未提供给NetApp。
+
+. 选择数据代理的位置并输入有关虚拟机的基本详细信息。
++
+image:screenshot_azure_data_broker.png["Azure 部署页面的屏幕截图，显示以下字段：订阅、Azure 区域、VNet、子网、VM 名称、用户名、身份验证方法和资源组。"]
+
++
+
+NOTE: 如果您计划实现持续同步关系，则必须为数据代理分配自定义角色。这也可以在创建代理后手动完成。
+
+. 如果 VNet 中的 Internet 访问需要代理，请指定代理配置。
+. 选择*继续*。如果您想向数据代理添加 S3 权限，请输入您的 AWS 访问和密钥。
+. 选择*继续*并保持页面打开，直到部署完成。
++
+该过程最多可能需要 7 分钟。
+
+. 在复制和同步中，一旦数据代理可用，请选择*继续*。
+. 完成向导中的页面以创建新的同步关系。
+
+
+.结果
+您已在 Azure 中部署了数据代理并创建了新的同步关系。您可以将此数据代理与其他同步关系一起使用。
+
+.收到需要管理员同意的消息吗？
+****
+如果 Microsoft 通知您需要管理员批准，因为复制和同步需要代表您访问组织中的资源的权限，那么您有两个选择：
+
+. 要求您的 AD 管理员为您提供以下权限：
++
+在 Azure 中，转到 *管理中心 > Azure AD > 用户和组 > 用户设置* 并启用 *用户可以同意应用程序代表他们访问公司数据*。
+
+. 请求您的 AD 管理员代表您同意使用以下 URL（这是管理员同意端点）*CloudSync-AzureDataBrokerCreator*：
++
+\ https://login.microsoftonline.com/ {在此处填写您的租户 ID}/v2.0/adminconsent?client_id=8ee4ca3a-bafa-4831-97cc-5a38923cab85&redirect_uri= https://cloudsync.netapp.com&scope=https://management.azure.com/user_impersonationhttps://graph.microsoft.com/User.Read
+
++
+如URL所示，我们的应用程序URL是\ https://cloudsync.netapp.com ，应用程序客户端ID是8ee4ca3a-bafa-4831-97cc-5a38923cab85。
+
+
+
+****
+
+
+== 有关数据代理虚拟机的详细信息
+
+复制和同步使用以下配置在 Azure 中创建数据代理。
+
+Node.js 兼容性:: v21.2.0
+VM 类型:: 标准 DS4 v2
+虚拟 CPU:: 8
+RAM:: 28 GB
+操作系统:: Rocky Linux 9.0
+磁盘大小和类型:: 64 GB 高级固态硬盘
+

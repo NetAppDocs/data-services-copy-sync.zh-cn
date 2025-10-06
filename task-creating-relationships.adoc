@@ -1,0 +1,262 @@
+---
+sidebar: sidebar 
+permalink: task-creating-relationships.html 
+keywords: sync, relationship, create, tags, settings, create a relationship, creating relationships, bucket setup, tags, bluexp, copy and sync 
+summary: 当您创建同步关系时， NetApp Copy and Sync 会将文件从源复制到目标。初始复制后，该服务每 24 小时同步一次任何更改的数据。 
+---
+= 在NetApp Copy and Sync 中创建同步关系
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+当您创建同步关系时， NetApp Copy and Sync 会将文件从源复制到目标。初始复制后，复制和同步每 24 小时同步一次任何更改的数据。
+
+在创建某些类型的同步关系之前，您首先需要在NetApp控制台中创建一个系统。
+
+
+
+== 为特定类型的系统创建同步关系
+
+如果您想要为以下任何一项创建同步关系，那么您首先需要创建或发现系统：
+
+* 适用于ONTAP 的Amazon FSx
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* 本地ONTAP集群
+
+
+.步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 创建或发现系统。
++
+** https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["创建Amazon FSx for ONTAP系统"^]
+** https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-quick-start.html["设置和发现Azure NetApp Files"^]
+** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-aws.html["在 AWS 中启动Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["在 Azure 中启动Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["在 Google Cloud 中启动Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-adding-systems.html["添加现有的Cloud Volumes ONTAP系统"^]
+** https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["发现ONTAP集群"^]
+
+
+. 选择*系统页面*。
+. 选择与上面列出的任何类型相匹配的系统。
+. 选择同步旁边的操作菜单。
++
+image:screenshot_sync_we.gif["屏幕截图显示了选择系统后同步菜单中可用的操作。"]
+
+. 选择*从此位置同步数据*或*同步数据到此位置*，然后按照提示设置同步关系。
+
+
+
+
+== 创建其他类型的同步关系
+
+使用这些步骤将数据同步到或同步自除Amazon FSx for ONTAP、 Azure NetApp Files、 Cloud Volumes ONTAP或本地ONTAP集群之外的受支持的存储类型。以下步骤提供了一个示例，展示了如何设置从 NFS 服务器到 S3 存储桶的同步关系。
+
+. 在NetApp控制台中，选择 *同步*。
+. 在*定义同步关系*页面上，选择源和目标。
++
+以下步骤提供了如何创建从 NFS 服务器到 S3 存储桶的同步关系的示例。
+
++
+image:screenshot_nfs_to_s3.png["屏幕截图显示 NFS 作为新同步关系中的源，S3 作为目标。"]
+
+. 在 *NFS 服务器* 页面上，输入要同步到 AWS 的 NFS 服务器的 IP 地址或完全限定域名。
+. 在*数据代理组*页面上，按照提示在 AWS、Azure 或 Google Cloud Platform 中创建数据代理虚拟机，或者在现有的 Linux 主机上安装数据代理软件。
++
+欲了解更多详情，请参阅以下页面：
+
++
+** link:task-installing-aws.html["在 AWS 中创建数据代理"]
+** link:task-installing-azure.html["在 Azure 中创建数据代理"]
+** link:task-installing-gcp.html["在 Google Cloud 中创建数据代理"]
+** link:task-installing-linux.html["在 Linux 主机上安装数据代理"]
+
+
+. 安装数据代理后，选择*继续*。
++
+image:screenshot-data-broker-group.png["此屏幕截图显示了已成功部署的实例。该界面显示有关实例的详细信息，包括 AWS 网络。"]
+
+. [[过滤器]]在*目录*页面上，选择顶级目录或子目录。
++
+如果复制和同步无法检索导出，请选择*手动添加导出*并输入 NFS 导出的名称。
+
++
+
+NOTE: 如果您想同步 NFS 服务器上的多个目录，则必须在完成后创建额外的同步关系。
+
+. 在 *AWS S3 Bucket* 页面上，选择一个存储桶：
++
+** 向下钻取以选择存储桶内的现有文件夹或选择您在存储桶内创建的新文件夹。
+** 选择“添加到列表”以选择与您的 AWS 帐户不关联的 S3 存储桶。link:reference-requirements.html#s3["必须对 S3 存储桶应用特定权限"] 。
+
+
+. 在*Bucket Setup*页面上，设置存储桶：
++
+** 选择是否启用 S3 存储桶加密，然后选择 AWS KMS 密钥、输入 KMS 密钥的 ARN 或选择 AES-256 加密。
+** 选择 S3 存储类。link:reference-supported-relationships.html#storage-classes["查看支持的存储类别"] 。
++
+image:screenshot_bucket_setup.gif["此屏幕截图显示了存储桶设置页面，您可以在其中选择“是”或“否”进行加密，并为同步数据选择特定的 S3 存储类。"]
+
+
+
+. [[settings]]在“*设置*”页面上，定义如何在目标位置同步和维护源文件和文件夹：
++
+计划:: 选择未来同步的重复计划或关闭同步计划。您可以安排每 1 分钟同步一次数据。
+同步超时:: 定义如果同步在指定的分钟数、小时数或天数内未完成，复制和同步是否应取消数据同步。
+通知:: 使您能够选择是否在NetApp控制台的通知中心接收复制和同步通知。您可以启用数据同步成功、数据同步失败和数据同步取消的通知。
+重试:: 定义复制和同步在跳过文件之前应重试同步文件的次数。
+连续同步:: 初始数据同步后，复制和同步会监听源 S3 存储桶或 Google Cloud Storage 存储桶上的变化，并在发生任何变化时持续同步到目标。无需按照预定的时间间隔重新扫描源。
++
+--
+此设置仅在创建同步关系时以及将数据从 S3 存储桶或 Google Cloud Storage 同步到 Azure Blob 存储、CIFS、Google Cloud Storage、IBM Cloud Object Storage、NFS、S3 和StorageGRID *或*从 Azure Blob 存储同步到 Azure Blob 存储、CIFS、Google Cloud Storage、IBM Cloud Object Storage、NFS 和StorageGRID可用。
+
+如果启用此设置，它将影响以下其他功能：
+
+** 同步计划已禁用。
+** 以下设置恢复为其默认值：同步超时、最近修改的文件和修改日期。
+** 如果 S3 是源，则按大小过滤将仅在复制事件（而不是删除事件）时有效。
+** 关系创建后，只能加速或删除关系。您不能中止同步、修改设置或查看报告。
++
+可以与外部存储桶创建连续同步关系。为此，请按照下列步骤操作：
+
++
+... 转到外部存储桶项目的 Google Cloud 控制台。
+... 转到*云存储>设置>云存储服务帐户*。
+... 更新 local.json 文件：
++
+[source, json]
+----
+{
+"protocols": {
+    "gcp": {
+        "storage-account-email": <storage account email>
+}
+}
+}
+----
+... 重新启动数据代理：
++
+.... sudo pm2 停止所有
+.... sudo pm2 启动所有
+
+
+... 与相关外部存储桶创建持续同步关系。
++
+
+NOTE: 用于与外部存储桶创建连续同步关系的数据代理将无法与其项目中的存储桶创建另一个连续同步关系。
+
+
+
+
+
+--
+比较依据:: 选择在确定文件或目录是否已更改并应再次同步时，复制和同步是否应比较某些属性。
++
+--
+即使您取消选中这些属性，“复制和同步”仍会通过检查路径、文件大小和文件名将源与目标进行比较。如果有任何变化，那么它会同步这些文件和目录。
+
+您可以通过比较以下属性来选择启用或禁用复制和同步：
+
+** *mtime*：文件的最后修改时间。此属性对于目录无效。
+** *uid*、*gid* 和 *mode*：Linux 的权限标志。
+
+
+--
+对象复制:: 启用此选项可复制对象存储元数据和标签。如果用户更改了源上的元数据，则“复制和同步”会在下一次同步中复制该对象，但如果用户更改了源上的标签（而不是数据本身），则“复制和同步”不会在下一次同步中复制该对象。
++
+--
+创建关系后，您无法编辑此选项。
+
+以 Azure Blob 或 S3 兼容端点（S3、 StorageGRID或 IBM Cloud Object Storage）为目标的同步关系支持复制标签。
+
+以下任意端点之间的“云到云”关系支持复制元数据：
+
+** AWS S3
+** Azure Blob
+** Google Cloud Storage
+** IBM Cloud Object Storage
+** StorageGRID
+
+
+--
+最近修改的文件:: 选择排除在预定同步之前最近修改的文件。
+删除源文件:: 在“复制和同步”将文件复制到目标位置后，选择从源位置删除文件。此选项存在数据丢失的风险，因为源文件在复制后会被删除。
++
+--
+如果启用此选项，您还需要更改数据代理上的 local.json 文件中的参数。打开文件并进行如下更新：
+
+[source, json]
+----
+{
+"workers":{
+"transferrer":{
+"delete-on-source": true
+}
+}
+}
+----
+更新 local.json 文件后，您应该重新启动： `pm2 restart all` 。
+
+--
+删除目标文件:: 如果文件已从源位置删除，则选择从目标位置删除文件。默认设置是从不从目标位置删除文件。
+文件类型:: 定义每次同步中要包含的文件类型：文件、目录、符号链接和硬链接。
++
+--
+
+NOTE: 硬链接仅适用于不安全的 NFS 到 NFS 关系。用户将被限制为一个扫描仪进程和一个扫描仪并发，并且扫描必须从根目录运行。
+
+--
+排除文件扩展名:: 通过输入文件扩展名并按 *Enter* 来指定要从同步中排除的正则表达式或文件扩展名。例如，键入 _log_ 或 _.log_ 来排除 *.log 文件。多个扩展名不需要分隔符。以下视频提供了一个简短的演示：
++
+--
+.排除同步关系的文件扩展名
+video::7f957dbf-9215-41ea-a705-b24c010b2212[panopto]
+
+NOTE: Regex 或正则表达式与通配符或 glob 表达式不同。此功能*仅*适用于正则表达式。
+
+--
+排除目录:: 通过输入其名称或目录完整路径并按 *Enter*，指定最多 15 个要从同步中排除的正则表达式或目录。默认情况下，.copy-offload、.snapshot、~snapshot 目录被排除。
++
+--
+
+NOTE: Regex 或正则表达式与通配符或 glob 表达式不同。此功能*仅*适用于正则表达式。
+
+--
+文件大小:: 选择同步所有文件，无论其大小，或仅同步特定大小范围内的文件。
+修改日期:: 选择所有文件，无论其最后修改日期如何，选择在特定日期之后、特定日期之前或某个时间范围内修改的文件。
+创建日期:: 当 SMB 服务器作为源时，此设置使您能够同步在特定日期之后、特定日期之前或特定时间范围之间创建的文件。
+ACL——访问控制列表:: 通过在创建关系时或创建关系后启用设置，从 SMB 服务器仅复制 ACL、仅复制文件或复制 ACL 和文件。
+
+
+. 在“标签/元数据”页面上，选择是否将键值对保存为传输到 S3 存储桶的所有文件的标签，或者是否为所有文件分配元数据键值对。
++
+image:screenshot_relationship_tags.png["创建与 Amazon S3 同步关系时显示标签/元数据页面的屏幕截图。"]
+
++
+
+TIP: 将数据同步到StorageGRID和 IBM Cloud Object Storage 时，此功能同样可用。对于 Azure 和 Google Cloud Storage，只有元数据选项可用。
+
+. 查看同步关系的详细信息，然后选择*创建关系*。
+
+
+*结果*
+
+复制和同步开始在源和目标之间同步数据。同步统计数据包括同步所花费的时间、是否停止以及复制、扫描或删除的文件数量。然后您可以管理您的 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html["同步关系"]， https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-data-brokers.html["管理您的数据经纪人"] ， 或者 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-reports.html#creating-reports["创建报告以优化您的性能和配置"]。
+
+
+
+== 从NetApp数据分类创建同步关系
+
+复制和同步与NetApp数据分类集成。在NetApp数据分类中，您可以选择要使用复制和同步同步到目标位置的源文件。
+
+从NetApp数据分类启动数据同步后，所有源信息都包含在一个步骤中，只需要您输入一些关键详细信息。然后，选择新同步关系的目标位置。
+
+image:screenshot-sync-data-sense.png["屏幕截图显示了直接从NetApp数据分类启动新同步后出现的NetApp数据分类集成页面。"]
+
+https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["了解如何从NetApp数据分类启动同步关系"^] 。

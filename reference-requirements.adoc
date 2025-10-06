@@ -1,0 +1,335 @@
+---
+sidebar: sidebar 
+permalink: reference-requirements.html 
+keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions, box 
+summary: 验证您的源和目标是否满足以下要求。 
+---
+= 在NetApp Copy and Sync 中准备源和目标
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+验证您的源和目标是否满足NetApp Copy and Sync 中的以下要求。
+
+
+
+== 网络连接
+
+* 源和目标必须与数据代理组有网络连接。
++
+例如，如果 NFS 服务器位于您的数据中心，而数据代理位于 AWS 中，那么您需要从您的网络到 VPC 的网络连接（VPN 或 Direct Connect）。
+
+* NetApp建议配置源、目标和数据代理以使用网络时间协议 (NTP) 服务。三个组件之间的时间差不应超过5分钟。
+
+
+
+
+== 目标目录
+
+当您创建同步关系时，“复制和同步”使您能够选择现有的目标目录，然后可以选择在该目录内创建一个新文件夹。因此请确保您的首选目标目录已经存在。
+
+
+
+== 读取目录的权限
+
+为了显示源或目标中的每个目录或文件夹，“复制和同步”需要对该目录或文件夹的读取权限。
+
+NFS:: 必须在源/目标上使用文件和目录的 uid/gid 定义权限。
+对象存储::
++
+--
+* 对于 AWS 和 Google Cloud，数据代理必须具有列表对象权限（如果您遵循数据代理安装步骤，则默认提供这些权限）。
+* 对于 Azure、 StorageGRID和 IBM，设置同步关系时输入的凭据必须具有列出对象权限。
+
+
+--
+SMB:: 设置同步关系时输入的 SMB 凭据必须具有列出文件夹权限。
+
+
+
+NOTE: 数据代理默认忽略以下目录：.snapshot、~snapshot、.copy-offload
+
+
+
+== [[s3]]Amazon S3 存储桶要求
+
+确保您的 Amazon S3 存储桶满足以下要求。
+
+
+
+=== Amazon S3 支持的数据代理位置
+
+包含 S3 存储的同步关系需要在 AWS 或您的场所部署数据代理。无论哪种情况，复制和同步都会提示您在安装期间将数据代理与 AWS 账户关联。
+
+* link:task-installing-aws.html["了解如何部署 AWS 数据代理"]
+* link:task-installing-linux.html["了解如何在 Linux 主机上安装数据代理"]
+
+
+
+
+=== 支持的 AWS 区域
+
+除中国地区外，所有地区均受支持。
+
+
+
+=== 其他 AWS 账户中的 S3 存储桶所需的权限
+
+设置同步关系时，您可以指定位于与数据代理无关的 AWS 账户中的 S3 存储桶。
+
+link:media/aws_iam_policy_s3_bucket.json["此 JSON 文件中包含的权限"^]必须应用于该 S3 存储桶，以便数据代理可以访问它。这些权限使数据代理能够将数据复制到存储桶或从存储桶中复制数据，并列出存储桶中的对象。
+
+请注意 JSON 文件中包含的权限的以下几点：
+
+. _<BucketName>_ 是位于与数据代理无关的 AWS 账户中的存储桶的名称。
+. _<RoleARN>_ 应替换为以下之一：
++
+** 如果在 Linux 主机上手动安装了数据代理，则 _RoleARN_ 应该是您在部署数据代理时为其提供 AWS 凭证的 AWS 用户的 ARN。
+** 如果使用 CloudFormation 模板在 AWS 中部署了数据代理，则 _RoleARN_ 应该是该模板创建的 IAM 角色的 ARN。
++
+您可以通过转到 EC2 控制台、选择数据代理实例，然后从描述选项卡中选择 IAM 角色来找到角色 ARN。然后，您应该会在 IAM 控制台中看到包含角色 ARN 的“摘要”页面。
+
++
+image:screenshot_iam_role_arn.gif["显示角色 ARN 的 AWS IAM 控制台屏幕截图。"]
+
+
+
+
+
+
+
+== [[blob]]Azure Blob 存储要求
+
+确保您的 Azure Blob 存储满足以下要求。
+
+
+
+=== Azure Blob 支持的数据代理位置
+
+当同步关系包括 Azure Blob 存储时，数据代理可以驻留在任何位置。
+
+
+
+=== 支持的 Azure 区域
+
+除中国、美国政府和美国国防部地区外，所有地区均受支持。
+
+
+
+=== 包含 Azure Blob 和 NFS/SMB 的关系的连接字符串
+
+在 Azure Blob 容器和 NFS 或 SMB 服务器之间创建同步关系时，需要为复制和同步提供存储帐户连接字符串：
+
+image:screenshot_connection_string.gif["显示连接字符串，可通过选择存储帐户，然后选择访问密钥从 Azure 门户获取。"]
+
+如果要在两个 Azure Blob 容器之间同步数据，则连接字符串必须包含 https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1["共享访问签名"^]（SAS）。您还可以选择在 Blob 容器和 NFS 或 SMB 服务器之间同步时使用 SAS。
+
+SAS 必须允许访问 Blob 服务和所有资源类型（服务、容器和对象）。  SAS 还必须包含以下权限：
+
+* 对于源 Blob 容器：读取和列出
+* 对于目标 Blob 容器：读取、写入、列出、添加和创建
+
+
+image:screenshot_connection_string_sas.gif["显示共享访问签名，可通过选择存储帐户，然后选择共享访问签名从 Azure 门户获取。"]
+
+
+NOTE: 如果您选择实现包含 Azure Blob 容器的连续同步关系，则可以使用常规连接字符串或 SAS 连接字符串。如果使用 SAS 连接字符串，则不得将其设置为在不久的将来过期。
+
+
+
+== Azure 数据湖存储 Gen2
+
+创建包含 Azure Data Lake 的同步关系时，需要为复制和同步提供存储帐户连接字符串。它必须是常规连接字符串，而不是共享访问签名（SAS）。
+
+
+
+== Azure NetApp Files要求
+
+在与Azure NetApp Files同步数据时，请使用 Premium 或 Ultra 服务级别。如果磁盘服务级别为标准，您可能会遇到故障和性能问题。
+
+
+TIP: 如果您需要帮助确定正确的服务级别，请咨询解决方案架构师。卷大小和卷层决定了您可以获得的吞吐量。
+
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits["详细了解Azure NetApp Files服务级别和吞吐量"^] 。
+
+
+
+== 盒子要求
+
+* 要创建包含 Box 的同步关系，您需要提供以下凭据：
++
+** 客户端 ID
+** 客户端机密
+** 私钥
+** 公钥ID
+** 密码短语
+** 企业 ID
+
+
+* 如果您创建从 Amazon S3 到 Box 的同步关系，则必须使用具有统一配置的数据代理组，其中以下设置设置为 1：
++
+** 扫描仪并发
+** 扫描仪进程限制
+** 转账并发
+** 转移者进程限制
+
+
++
+link:task-managing-data-brokers.html#set-up-a-unified-configuration["了解如何为数据代理组定义统一配置"^] 。
+
+
+
+
+
+== [[google]]Google Cloud Storage 存储桶要求
+
+确保您的 Google Cloud Storage 存储桶满足以下要求。
+
+
+
+=== Google Cloud Storage 支持的数据代理位置
+
+包含 Google Cloud Storage 的同步关系需要在 Google Cloud 或您的场所部署数据代理。当您创建同步关系时，复制和同步会指导您完成数据代理安装过程。
+
+* link:task-installing-gcp.html["了解如何部署 Google Cloud 数据代理"]
+* link:task-installing-linux.html["了解如何在 Linux 主机上安装数据代理"]
+
+
+
+
+=== 支持的 Google Cloud 区域
+
+支持所有地区。
+
+
+
+=== 其他 Google Cloud 项目中存储桶的权限
+
+设置同步关系时，如果您向数据代理的服务帐户提供所需的权限，则可以从不同项目中的 Google Cloud 存储桶中进行选择。link:task-installing-gcp.html["了解如何设置服务帐户"] 。
+
+
+
+=== SnapMirror目标的权限
+
+如果同步关系的源是SnapMirror目标（只读），则“读取/列出”权限足以将数据从源同步到目标。
+
+
+
+=== 加密 Google Cloud 存储桶
+
+您可以使用客户管理的 KMS 密钥或默认的 Google 管理密钥加密目标 Google Cloud 存储桶。如果存储桶已添加了 KMS 加密，它将覆盖默认的 Google 管理加密。
+
+要添加客户管理的 KMS 密钥，您需要使用具有 https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-for-the-service-account["正确的权限"]，并且 key 必须与 bucket 位于同一区域。
+
+
+
+== Google 云端硬盘
+
+当您设置包含 Google Drive 的同步关系时，您需要提供以下信息：
+
+* 有权访问您要同步数据的 Google Drive 位置的用户的电子邮件地址
+* 有权访问 Google Drive 的 Google Cloud 服务帐户的电子邮件地址
+* 服务帐户的私钥
+
+
+要设置服务帐户，请按照 Google 文档中的说明进行操作：
+
+* https://developers.google.com/admin-sdk/directory/v1/guides/delegation#create_the_service_account_and_credentials["创建服务帐户和凭据"^]
+* https://developers.google.com/admin-sdk/directory/v1/guides/delegation#delegate_domain-wide_authority_to_your_service_account["将域范围的权限委托给您的服务帐户"^]
+
+
+编辑 OAuth 范围字段时，输入以下范围：
+
+* \ https://www.googleapis.com/auth/drive
+* \ https://www.googleapis.com/auth/drive.file
+
+
+
+
+== NFS 服务器要求
+
+* NFS 服务器可以是NetApp系统，也可以是非NetApp系统。
+* 文件服务器必须允许数据代理主机通过所需端口访问导出。
++
+** 111 TCP/UDP
+** 2049 TCP/UDP
+** 5555 TCP/UDP
+
+
+* 支持 NFS 版本 3、4.0、4.1 和 4.2。
++
+必须在服务器上启用所需的版本。
+
+* 如果要从ONTAP系统同步 NFS 数据，请确保已启用对 SVM 的 NFS 导出列表的访问（vserver nfs modify -vserver _svm_name_ -showmount enabled）。
++
+
+NOTE: 从ONTAP 9.2 开始，showmount 的默认设置为 _enabled_。
+
+
+
+
+
+== ONTAP 要求
+
+如果同步关系包括Cloud Volumes ONTAP或本地ONTAP集群，并且您选择了 NFSv4 或更高版本，则需要在ONTAP系统上启用 NFSv4 ACL。这是复制 ACL 所必需的。
+
+
+
+== ONTAP S3 存储要求
+
+当你设置包含以下内容的同步关系时 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3 存储"^]，您需要提供以下信息：
+
+* 连接到ONTAP S3 的 LIF 的 IP 地址
+* ONTAP配置使用的访问密钥和密钥
+
+
+
+
+== SMB 服务器要求
+
+* SMB 服务器可以是NetApp系统，也可以是非NetApp系统。
+* 您需要向复制和同步提供在 SMB 服务器上具有权限的凭据。
++
+** 对于源 SMB 服务器，需要以下权限：列出和读取。
++
+备份操作员组的成员受到源 SMB 服务器的支持。
+
+** 对于目标 SMB 服务器，需要以下权限：列出、读取和写入。
+
+
+* 文件服务器必须允许数据代理主机通过所需端口访问导出。
++
+** 139 TCP
+** 445 TCP
+** 137-138 UDP
+
+
+* 支持 SMB 版本 1.0、2.0、2.1、3.0 和 3.11。
+* 授予“管理员”组对源文件夹和目标文件夹的“完全控制”权限。
++
+如果您不授予此权限，则数据代理可能没有足够的权限来获取文件或目录的 ACL。如果发生这种情况，您将收到以下错误：“getxattr 错误 95”
+
+
+
+
+
+=== 隐藏目录和文件的 SMB 限制
+
+在 SMB 服务器之间同步数据时，SMB 限制会影响隐藏目录和文件。如果源 SMB 服务器上的任何目录或文件通过 Windows 隐藏，则隐藏属性不会复制到目标 SMB 服务器。
+
+
+
+=== 由于不区分大小写限制导致的 SMB 同步行为
+
+SMB 协议不区分大小写，这意味着大写字母和小写字母被视为相同。如果同步关系包括 SMB 服务器并且目标上已存在数据，则此行为可能导致文件覆盖和目录复制错误。
+
+例如，假设源上有一个名为“a”的文件，目标上有一个名为“A”的文件。当复制和同步将名为“a”的文件复制到目标时，文件“A”将被源中的文件“a”覆盖。
+
+对于目录，假设源上有一个名为“b”的目录，目标上有一个名为“B”的目录。当“复制和同步”尝试将名为“b”的目录复制到目标时，“复制和同步”会收到一条错误消息，提示该目录已存在。因此，复制和同步总是无法复制名为“b”的目录。
+
+避免此限制的最佳方法是确保将数据同步到空目录。

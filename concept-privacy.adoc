@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: concept-privacy.html 
+keywords: privacy, data privacy, credentials, access to credentials, hashicorp vault 
+summary: NetApp无法访问您在使用NetApp Copy and Sync 时提供的任何凭据。凭证直接存储在位于您的网络中的数据代理机器上。 
+---
+= NetApp复制和同步中的数据隐私
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp无法访问您在使用NetApp Copy and Sync 时提供的任何凭据。凭证直接存储在位于您的网络中的数据代理机器上。
+
+根据您选择的配置，当您创建新的关系时，“复制和同步”可能会提示您输入凭据。例如，在设置包含 SMB 服务器的关系时，或在 AWS 中部署数据代理时。
+
+这些凭证始终直接保存到数据代理本身。数据代理驻留在您网络中的一台机器上，无论它是在本地还是在您的云帐户中。这些凭证永远不会提供给NetApp。
+
+凭证使用 HashiCorp Vault 在数据代理机器上进行本地加密。

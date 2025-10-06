@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: task-copying-acls.html 
+keywords: permissions, access control list, acls, ntfs, cifs, smb, shares, robocopy, copy, transfer, activate, operating system, os, ram, cpu, networking, copy acls to the target 
+summary: 'NetApp Copy and Sync 可以在 SMB 共享之间以及 SMB 共享和对象存储之间复制访问控制列表 (ACL)（ ONTAP S3 除外）。如果需要，您还可以选择使用 robocopy 手动保留 SMB 共享之间的 ACL。' 
+---
+= 在NetApp Copy and Sync 中从 SMB 共享复制 ACL
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync 可以在 SMB 共享之间以及 SMB 共享和对象存储之间复制访问控制列表 (ACL)（ ONTAP S3 除外）。如果需要，您还可以选择使用 robocopy 手动保留 SMB 共享之间的 ACL。
+
+.选择
+* <<设置复制和同步以复制 ACL,设置复制和同步以自动复制 ACL>>
+* <<在 SMB 共享之间手动复制 ACL,在 SMB 共享之间手动复制 ACL>>
+
+
+
+
+== 设置复制和同步以复制 ACL
+
+通过在创建关系时或创建关系后启用设置，在 SMB 共享之间以及 SMB 共享和对象存储之间复制 ACL。
+
+.开始之前
+此功能适用于任何类型的数据代理：AWS、Azure、Google Cloud Platform 或本地数据代理。本地数据代理可以运行link:task-installing-linux.html["任何受支持的操作系统"]。
+
+.建立新关系的步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 从复制和同步中，选择*创建新同步*。
+. 将 SMB 服务器或对象存储拖放为源，将 SMB 服务器或对象存储拖放为目标，然后选择*继续*。
+. 在 *SMB 服务器* 页面上：
++
+.. 输入新的 SMB 服务器或选择现有服务器并选择*继续*。
+.. 输入 SMB 服务器的凭据。
+.. 选择*仅复制文件*、*仅复制 ACL*或*复制文件和 ACL*，然后选择*继续*。
++
+image:screenshot_acl_support.png["屏幕截图显示了启用“复制访问控制列表”到目标的选项。"]
+
+
+
+. 按照其余提示创建同步关系。
++
+将 ACL 从 SMB 复制到对象存储时，您可以选择将 ACL 复制到对象的标签或对象的元数据，具体取决于目标。对于 Azure 和 Google Cloud Storage，只有元数据选项可用。
+
++
+以下屏幕截图显示了您可以做出此选择的步骤示例。
+
++
+image:screenshot-sync-tags-metadata.png["复制到对象存储时同步关系向导第六步的屏幕截图。您可以选择将 ACL 保存到对象的标签或元数据中。"]
+
+
+
+.现有关系的步骤
+. 将鼠标悬停在同步关系上并选择操作菜单。
+. 选择“设置”。
+. 选择*仅复制文件*、*仅复制 ACL*或*复制文件和 ACL*，然后选择*继续*。
+. 选择“保存设置”。
+
+
+.结果
+同步数据时，复制和同步会保留源和目标之间的 ACL。
+
+
+
+== 在 SMB 共享之间手动复制 ACL
+
+您可以使用 Windows robocopy 命令手动保留 SMB 共享之间的 ACL。
+
+.步骤
+. 确定对两个 SMB 共享都具有完全访问权限的 Windows 主机。
+. 如果任一端点需要身份验证，请使用 *net use* 命令从 Windows 主机连接到端点。
++
+在使用 robocopy 之前，必须执行此步骤。
+
+. 从复制和同步中，在源和目标 SMB 共享之间创建新的关系或同步现有关系。
+. 数据同步完成后，从 Windows 主机运行以下命令来同步 ACL 和所有权：
++
+ robocopy /E /COPY:SOU /secfix [source] [target] /w:0 /r:0 /XD ~snapshots /UNILOG:”[logfilepath]
++
+_source_ 和 _target_ 都应该使用 UNC 格式指定。例如：\\<服务器>\<共享>\<路径>
+
+

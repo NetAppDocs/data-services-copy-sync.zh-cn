@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-relationships.html 
+keywords: supported sync relationships, support, supported target, supported source 
+summary: NetApp Copy and Sync 使您能够将数据从源同步到目标。这被称为同步关系。在开始之前您应该了解所支持的关系。 
+---
+= NetApp Copy and Sync 中支持的同步关系
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync 使您能够将数据从源同步到目标。这被称为同步关系。在开始之前您应该了解所支持的关系。
+
+[cols="20,25"]
+|===
+| 源位置 | 支持的目标位置 
+
+
+| 亚马逊 EFS  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| 适用于ONTAP 的Amazon FSx  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Amazon S3  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* 盒子^1^
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* ONTAP S3 存储
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Azure Blob  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Azure 数据湖存储 Gen2  a| 
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* 适用于ONTAP的 FSx
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP
+* ONTAP S3 存储
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Azure NetApp Files  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| 盒子^1^  a| 
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* IBM Cloud Object Storage
+* NFS 服务器
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Cloud Volumes ONTAP  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Google Cloud Storage  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* ONTAP S3 存储
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| Google 云端硬盘  a| 
+* NFS 服务器
+* SMB 服务器
+
+
+
+
+| IBM Cloud Object Storage  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* 盒子^1^
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| NFS 服务器  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* Google 云端硬盘
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* ONTAP S3 存储
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| 本地ONTAP集群（NFS 或 SMB）  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| ONTAP S3 存储  a| 
+* Amazon S3
+* Azure 数据湖存储 Gen2
+* Google Cloud Storage
+* NFS 服务器
+* SMB 服务器
+* StorageGRID
+* ONTAP S3 存储
+
+
+
+
+| SFTP ^2^ | S3 
+
+
+| SMB 服务器  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* Google 云端硬盘
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* ONTAP S3 存储
+* SMB 服务器
+* StorageGRID
+
+
+
+
+| StorageGRID  a| 
+* 亚马逊 EFS
+* 适用于ONTAP 的Amazon FSx
+* Amazon S3
+* Azure Blob
+* Azure 数据湖存储 Gen2
+* Azure NetApp Files
+* 盒子^1^
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS 服务器
+* 本地ONTAP集群（NFS 或 SMB）
+* ONTAP S3 存储
+* SMB 服务器
+* StorageGRID
+
+
+|===
+注：
+
+. Box 支持目前可作为预览使用。
+. 仅通过使用复制和同步 API 支持与此源/目标的同步关系。
+. 当 Blob 容器是目标时，您可以选择特定的 Azure Blob 存储层：
++
+** 热存储
+** 冷藏
+
+
+. [[storage-classes]]当 Amazon S3 是目标时，您可以选择特定的 S3 存储类：
++
+** 标准（这是默认类）
+** 智能分层
+** 标准-不频繁访问
+** 单区-不频繁访问
+** 冰川深度档案
+** 冰川灵活检索
+** 冰川即时检索
+
+
+. 当 Google Cloud Storage 存储桶是目标时，您可以选择特定的存储类别：
++
+** 标准
+** 近线
+** 冷线
+** 归档
+
+
+

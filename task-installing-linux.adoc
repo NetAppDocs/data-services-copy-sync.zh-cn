@@ -1,0 +1,207 @@
+---
+sidebar: sidebar 
+permalink: task-installing-linux.html 
+keywords: data broker, install, linux, on-prem data broker, on-prem, on prem, on premises, networking, permissions, os, operating system, rhel, red hat, ram, cpu, disk space, install data broker, installing data broker, install a data broker, data broker installation, linux installation, linux operating system, aws access, aws keys, keys, gcp access, aws permissions, gcp permissions, google permissions 
+summary: 创建新的数据代理时，请选择 On-Prem Data Broker 选项在本地 Linux 主机或云中的现有 Linux 主机上安装数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。 
+---
+= 在 Linux 主机上安装用于NetApp复制和同步的数据代理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+为NetApp Copy and Sync 创建新的数据代理组时，请选择 On-Prem Data Broker 选项在本地 Linux 主机或云中的现有 Linux 主机上安装数据代理软件。  NetApp Copy and Sync 将指导您完成安装过程，但此页面上重复了要求和步骤，以帮助您做好安装准备。
+
+
+
+== Linux 主机要求
+
+* Node.js 兼容性：v21.2.0
+* *操作系统*：
++
+** CentOS 8.0 和 8.5
++
+CentOS Stream 不受支持。
+
+** Red Hat Enterprise Linux 8.5、8.8、8.9 和 9.4
+** Rocky Linux 9
+** Ubuntu Server 20.04 LTS、23.04 LTS 和 24.04 LTS
+** SUSE Linux Enterprise Server 15 SP1
++
+命令 `yum update`在安装数据代理之前必须在主机上运行。
+
++
+Red Hat Enterprise Linux 系统必须在 Red Hat 订阅管理中注册。如果未注册，系统将无法访问存储库来在安装期间更新所需的第三方软件。
+
+
+
+* 内存：16 GB
+* *CPU*：4核
+* *可用磁盘空间*：10 GB
+* *SELinux*：我们建议您在主机上禁用 SELinux。
++
+SELinux 强制执行阻止数据代理软件更新的策略，并可以阻止数据代理联系正常运行所需的端点。
+
+
+
+
+
+== Root权限
+
+数据代理软件在 Linux 主机上自动以 root 身份运行。以 root 身份运行是数据代理操作的必要条件。例如，挂载共享。
+
+
+
+== 网络要求
+
+* Linux 主机必须与源和目标建立连接。
+* 文件服务器必须允许 Linux 主机访问导出。
+* Linux 主机上必须打开端口 443 才能向 AWS 发送出站流量（数据代理不断与 Amazon SQS 服务通信）。
+* NetApp建议配置源、目标和数据代理以使用网络时间协议 (NTP) 服务。三个组件之间的时间差不应超过5分钟。
+
+
+
+
+== 启用对 AWS 的访问
+
+如果您计划使用包含 S3 存储桶的同步关系的数据代理，那么您应该准备好 Linux 主机以供 AWS 访问。安装数据代理时，您需要为具有编程访问权限和特定权限的 AWS 用户提供 AWS 密钥。
+
+.步骤
+. 使用创建 IAM 策略 https://s3.amazonaws.com/metadata.datafabric.io/docs/on_prem_iam_policy.json["NetApp提供的政策"^]
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["查看 AWS 说明"^]
+
+. 创建具有编程访问权限的 IAM 用户。
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html["查看 AWS 说明"^]
+
++
+请务必复制 AWS 密钥，因为您需要在安装数据代理软件时指定它们。
+
+
+
+
+
+== 启用对 Google Cloud 的访问
+
+如果您计划使用包含 Google Cloud Storage 存储桶的同步关系的数据代理，那么您应该准备 Linux 主机以供 Google Cloud 访问。安装数据代理时，您需要为具有特定权限的服务帐户提供密钥。
+
+.步骤
+. 如果您还没有 Google Cloud 服务帐户，请创建一个具有存储管理员权限的 Google Cloud 服务帐户。
+. 创建以 JSON 格式保存的服务帐户密钥。
++
+https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys["查看 Google Cloud 说明"^]
+
++
+该文件至少应包含以下属性：“project_id”、“private_key”和“client_email”
+
++
+
+NOTE: 当您创建密钥时，文件就会生成并下载到您的机器上。
+
+. 将 JSON 文件保存到 Linux 主机。
+
+
+
+
+== 启用对 Microsoft Azure 的访问
+
+通过在同步关系向导中提供存储帐户和连接字符串来定义每个关系对 Azure 的访问。
+
+
+
+== 安装数据代理
+
+创建同步关系时，您可以在 Linux 主机上安装数据代理。
+
+.步骤
+. link:task-login-copyandsync.html["登录以复制和同步"] 。
+. 选择*创建新同步*。
+. 在*定义同步关系*页面上，选择源和目标，然后选择*继续*。
++
+完成这些步骤，直到到达*数据经纪人组*页面。
+
+. 在*数据代理组*页面上，选择*创建数据代理*，然后选择*本地数据代理*。
++
+image:screenshot-on-prem.png["数据代理页面的屏幕截图，可让您在 AWS、Azure、Google Cloud 和 On-Prem 数据代理之间进行选择。"]
+
++
+
+NOTE: 尽管该选项标记为 *_On-Prem_ Data Broker*，但它适用于您所在地或云中的 Linux 主机。
+
+. 输入数据代理的名称并选择*继续*。
++
+说明页面很快就会加载。您需要遵循这些说明 - 它们包含下载安装程序的唯一链接。
+
+. 在说明页面上：
++
+.. 选择是否启用对 *AWS*、*Google Cloud* 或两者的访问。
+.. 选择安装选项：*无代理*、*使用代理服务器*或*使用带有身份验证的代理服务器*。
++
+
+NOTE: 该用户必须是本地用户。不支持域用户。
+
+.. 使用命令下载并安装数据代理。
++
+以下步骤提供了有关每个可能的安装选项的详细信息。按照说明页面根据您的安装选项获取准确的命令。
+
+.. 下载安装程序：
++
+*** 无代理：
++
+`curl <URI> -o data_broker_installer.sh`
+
+*** 使用代理服务器：
++
+`curl <URI> -o data_broker_installer.sh -x <proxy_host>:<proxy_port>`
+
+*** 使用带有身份验证的代理服务器：
++
+`curl <URI> -o data_broker_installer.sh -x <proxy_username>:<proxy_password>@<proxy_host>:<proxy_port>`
+
++
+URI:: 复制和同步会在说明页面上显示安装文件的 URI，当您按照提示部署 On-Prem 数据代理时，该 URI 会加载。该 URI 不会在此重复，因为链接是动态生成的并且只能使用一次。<<安装数据代理,按照以下步骤从复制和同步中获取 URI>> 。
+
+
+
+
+.. 切换到超级用户，使安装程序可执行并安装软件：
++
+
+NOTE: 下面列出的每个命令都包含 AWS 访问和 Google Cloud 访问的参数。按照说明页面根据您的安装选项获取准确的命令。
+
++
+*** 无代理配置：
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file>`
+
+*** 代理配置：
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port>`
+
+*** 带有身份验证的代理配置：
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port> -u <proxy_username> -w <proxy_password>`
+
++
+AWS 密钥:: 这些是您应该为用户准备的密钥<<启用对 AWS 的访问,按照以下步骤>>。  AWS 密钥存储在数据代理上，该代理在您的本地或云网络中运行。  NetApp不使用数据代理之外的密钥。
+JSON 文件:: 这是包含您应该准备好的服务帐户密钥的 JSON 文件<<启用对 Google Cloud 的访问,按照以下步骤>>。
+
+
+
+
+
+
+. 一旦数据代理可用，请在复制和同步中选择*继续*。
+. 完成向导中的页面以创建新的同步关系。
+
