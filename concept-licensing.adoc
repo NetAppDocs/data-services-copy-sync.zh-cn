@@ -24,6 +24,11 @@ summary: 14 天免费试用期结束后，您可以通过两种方式支付同�
 
 订阅 AWS 或 Azure 的复制和同步服务可让您按小时付费或按年付费。link:task-licensing.html["您可以通过 AWS 或 Azure 订阅"] ，取决于您想要在哪里付款。
 
+[NOTE]
+====
+Copy and Sync 仅支持来自 **AWS** 和 **Azure** 的 Marketplace 订阅。Copy and Sync 不支持 Google Cloud Marketplace 订阅。
+
+====
 
 
 === 按小时订阅

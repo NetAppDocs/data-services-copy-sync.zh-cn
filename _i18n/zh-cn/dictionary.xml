@@ -1995,4 +1995,5 @@
   <block id="998375a7e557e86f30bd231c581f357a" category="admonition">使用复制和同步将 SMB 数据复制到Cloud Volumes ONTAP时，源系统中的文件和文件夹所有权不会被保留。出现这种行为的原因是 Copy and Sync 使用了 Linux SMB 客户端，该客户端会将所有权分配给用于验证传输的用户或服务帐户。虽然可以保留访问控制列表，但所有权和审计信息可能与源系统不同。此行为是预期的。</block>
   <block id="3d2ca821daba65add026b662c8f28f8e" category="paragraph">复制和同步功能会保留 SMB ACL（权限），但不会复制文件或文件夹的所有权。所有权不包含在中小企业访问控制列表 (ACL) 转移操作中。</block>
   <block id="0bdd8934a5af74cc1118d4d760ec3c9f" category="paragraph">如果您除了需要保留访问控制列表 (ACL) 之外，还需要保留所有权（所有者和组），则可以使用以下方法：<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>命令。使用<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>标记副本 ACL、所有权和审计信息。</block>
+  <block id="35e87b798eb20e7292277632ad38f075" category="paragraph">Copy and Sync 仅支持来自 **AWS** 和 **Azure** 的 Marketplace 订阅。Copy and Sync 不支持 Google Cloud Marketplace 订阅。</block>
 </blocks>
