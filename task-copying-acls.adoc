@@ -63,6 +63,11 @@ image:screenshot-sync-tags-metadata.png["复制到对象存储时同步关系向
 . 选择“保存设置”。
 
 
+[NOTE]
+====
+复制和同步功能会保留 SMB ACL（权限），但不会复制文件或文件夹的所有权。所有权不包含在中小企业访问控制列表 (ACL) 转移操作中。
+
+====
 .结果
 同步数据时，复制和同步会保留源和目标之间的 ACL。
 
@@ -72,6 +77,11 @@ image:screenshot-sync-tags-metadata.png["复制到对象存储时同步关系向
 
 您可以使用 Windows robocopy 命令手动保留 SMB 共享之间的 ACL。
 
+[NOTE]
+====
+如果您除了需要保留访问控制列表 (ACL) 之外，还需要保留所有权（所有者和组），则可以使用以下方法： `robocopy`命令。使用 `/copyall`标记副本 ACL、所有权和审计信息。
+
+====
 .步骤
 . 确定对两个 SMB 共享都具有完全访问权限的 Windows 主机。
 . 如果任一端点需要身份验证，请使用 *net use* 命令从 Windows 主机连接到端点。

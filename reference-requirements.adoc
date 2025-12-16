@@ -55,6 +55,9 @@ SMB:: 设置同步关系时输入的 SMB 凭据必须具有列出文件夹权限
 NOTE: 数据代理默认忽略以下目录：.snapshot、~snapshot、.copy-offload
 
 
+NOTE: 使用复制和同步将 SMB 数据复制到Cloud Volumes ONTAP时，源系统中的文件和文件夹所有权不会被保留。出现这种行为的原因是 Copy and Sync 使用了 Linux SMB 客户端，该客户端会将所有权分配给用于验证传输的用户或服务帐户。虽然可以保留访问控制列表，但所有权和审计信息可能与源系统不同。此行为是预期的。
+
+
 
 == [[s3]]Amazon S3 存储桶要求
 

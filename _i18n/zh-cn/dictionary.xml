@@ -1991,4 +1991,8 @@
   <block id="daf104544b5203a46e1580e1b8583f1f" category="paragraph">将 NSS 凭据与您的NetApp Console帐户关联与将 NSS 帐户与控制台用户登录关联不同。</block>
   <block id="5bc1315a63455544e7a917a7cc968939" category="paragraph">这些 NSS 凭证与您的特定控制台帐户 ID 相关联。属于控制台组织的用户可以从*支持 &gt; NSS 管理*访问这些凭据。</block>
   <block id="7687b0a57d5cb728d9fb892dfc814715" category="paragraph">这些操作使控制台能够使用您的 NSS 帐户进行许可证下载、软件升级验证和未来支持注册等操作。</block>
+  <block id="b0b815fd6be3894641c6ac1e95849338" category="admonition">Copy Sync 会复制 SMB ACL（权限），但不会复制文件或文件夹的所有权。所有权属性不包含在 SMB ACL 复制操作中。如果在 SMB 共享之间复制数据时需要保留所有权，请使用<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>手动复制安全信息。例如，<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>标记副本 ACL、所有者和审计数据。</block>
+  <block id="998375a7e557e86f30bd231c581f357a" category="admonition">使用复制和同步将 SMB 数据复制到Cloud Volumes ONTAP时，源系统中的文件和文件夹所有权不会被保留。出现这种行为的原因是 Copy and Sync 使用了 Linux SMB 客户端，该客户端会将所有权分配给用于验证传输的用户或服务帐户。虽然可以保留访问控制列表，但所有权和审计信息可能与源系统不同。此行为是预期的。</block>
+  <block id="3d2ca821daba65add026b662c8f28f8e" category="paragraph">复制和同步功能会保留 SMB ACL（权限），但不会复制文件或文件夹的所有权。所有权不包含在中小企业访问控制列表 (ACL) 转移操作中。</block>
+  <block id="0bdd8934a5af74cc1118d4d760ec3c9f" category="paragraph">如果您除了需要保留访问控制列表 (ACL) 之外，还需要保留所有权（所有者和组），则可以使用以下方法：<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>命令。使用<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>标记副本 ACL、所有权和审计信息。</block>
 </blocks>
