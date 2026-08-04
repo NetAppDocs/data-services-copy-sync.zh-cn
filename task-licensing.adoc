@@ -28,6 +28,7 @@ link:concept-licensing.html["详细了解许可证的运作方式"] 。
 
 
 
+[[awssubscribe-from-aws]]
 == [[aws]]从 AWS 订阅
 
 AWS 允许您按使用量付费或按年付费。
@@ -54,6 +55,7 @@ video::796ffd6d-cade-4750-8504-b24c010b225d[panopto]
 
 
 
+[[azuresubscribe-from-azure]]
 == [[azure]]从 Azure 订阅
 
 Azure 允许您按使用量付费或按年付费。
@@ -82,6 +84,7 @@ video::a6a39447-b7b1-42f6-9c89-b24c010b21b9[panopto]
 
 
 
+[[licensespurchase-licenses-from-netapp-and-add-them-to-copy-and-sync]]
 == [[licenses]]从NetApp购买许可证并将其添加到复制和同步
 
 要预先支付同步关系的费用，您必须购买一个或多个许可证并将其添加到复制和同步中。
@@ -109,6 +112,7 @@ video::a6a39447-b7b1-42f6-9c89-b24c010b21b9[panopto]
 
 
 
+[[update-a-license]]
 == 更新许可证
 
 如果您延长了从NetApp购买的复制和同步许可证，则新的到期日期将不会在复制和同步中自动更新。您需要重新添加许可证以刷新到期日期。许可证应通过复制和同步或适用的网站进行管理，而不是通过NetApp Console订阅进行管理。

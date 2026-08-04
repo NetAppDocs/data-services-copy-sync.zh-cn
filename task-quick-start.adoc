@@ -34,8 +34,8 @@ summary: 开始使用NetApp Copy and Sync包括几个步骤。
 Cloud Volumes ONTAP、本地ONTAP集群和Amazon FSx for ONTAP都需要控制台代理。
 
 [role="quick-margin-list"]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["了解如何开始使用NetApp Console"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["了解有关控制台代理的更多信息"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["了解如何开始使用NetApp Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解有关控制台代理的更多信息"^]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]准备源和目标

@@ -18,6 +18,7 @@ summary: 验证您的源和目标是否满足以下要求。
 
 
 
+[[networking]]
 == 网络连接
 
 * 源和目标必须与数据代理组有网络连接。
@@ -29,12 +30,14 @@ summary: 验证您的源和目标是否满足以下要求。
 
 
 
+[[target-directory]]
 == 目标目录
 
 当您创建同步关系时，“复制和同步”使您能够选择现有的目标目录，然后可以选择在该目录内创建一个新文件夹。因此请确保您的首选目标目录已经存在。
 
 
 
+[[permissions-to-read-directories]]
 == 读取目录的权限
 
 为了显示源或目标中的每个目录或文件夹，“复制和同步”需要对该目录或文件夹的读取权限。
@@ -59,12 +62,14 @@ NOTE: 使用复制和同步将 SMB 数据复制到Cloud Volumes ONTAP时，源�
 
 
 
+[[s3amazon-s3-bucket-requirements]]
 == [[s3]]Amazon S3 存储桶要求
 
 确保您的 Amazon S3 存储桶满足以下要求。
 
 
 
+[[supported-data-broker-locations-for-amazon-s3]]
 === Amazon S3 支持的数据代理位置
 
 包含 S3 存储的同步关系需要在 AWS 或您的场所部署数据代理。无论哪种情况，复制和同步都会提示您在安装期间将数据代理与 AWS 账户关联。
@@ -75,12 +80,14 @@ NOTE: 使用复制和同步将 SMB 数据复制到Cloud Volumes ONTAP时，源�
 
 
 
+[[supported-aws-regions]]
 === 支持的 AWS 区域
 
 除中国地区外，所有地区均受支持。
 
 
 
+[[permissions-required-for-s3-buckets-in-other-aws-accounts]]
 === 其他 AWS 账户中的 S3 存储桶所需的权限
 
 设置同步关系时，您可以指定位于与数据代理无关的 AWS 账户中的 S3 存储桶。
@@ -106,24 +113,28 @@ image:screenshot_iam_role_arn.gif["显示角色 ARN 的 AWS IAM 控制台屏幕�
 
 
 
+[[blobazure-blob-storage-requirements]]
 == [[blob]]Azure Blob 存储要求
 
 确保您的 Azure Blob 存储满足以下要求。
 
 
 
+[[supported-data-broker-locations-for-azure-blob]]
 === Azure Blob 支持的数据代理位置
 
 当同步关系包括 Azure Blob 存储时，数据代理可以驻留在任何位置。
 
 
 
+[[supported-azure-regions]]
 === 支持的 Azure 区域
 
 除中国、美国政府和美国国防部地区外，所有地区均受支持。
 
 
 
+[[connection-string-for-relationships-that-include-azure-blob-and-nfssmb]]
 === 包含 Azure Blob 和 NFS/SMB 的关系的连接字符串
 
 在 Azure Blob 容器和 NFS 或 SMB 服务器之间创建同步关系时，需要为复制和同步提供存储帐户连接字符串：
@@ -145,12 +156,14 @@ NOTE: 如果您选择实现包含 Azure Blob 容器的连续同步关系，则�
 
 
 
+[[azure-data-lake-storage-gen2]]
 == Azure 数据湖存储 Gen2
 
 创建包含 Azure Data Lake 的同步关系时，需要为复制和同步提供存储帐户连接字符串。它必须是常规连接字符串，而不是共享访问签名（SAS）。
 
 
 
+[[azure-netapp-files-requirement]]
 == Azure NetApp Files要求
 
 在与Azure NetApp Files同步数据时，请使用 Premium 或 Ultra 服务级别。如果磁盘服务级别为标准，您可能会遇到故障和性能问题。
@@ -162,6 +175,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[box-requirements]]
 == 盒子要求
 
 * 要创建包含 Box 的同步关系，您需要提供以下凭据：
@@ -189,12 +203,14 @@ link:task-managing-data-brokers.html#set-up-a-unified-configuration["了解如�
 
 
 
+[[googlegoogle-cloud-storage-bucket-requirements]]
 == [[google]]Google Cloud Storage 存储桶要求
 
 确保您的 Google Cloud Storage 存储桶满足以下要求。
 
 
 
+[[supported-data-broker-locations-for-google-cloud-storage]]
 === Google Cloud Storage 支持的数据代理位置
 
 包含 Google Cloud Storage 的同步关系需要在 Google Cloud 或您的场所部署数据代理。当您创建同步关系时，复制和同步会指导您完成数据代理安装过程。
@@ -205,32 +221,37 @@ link:task-managing-data-brokers.html#set-up-a-unified-configuration["了解如�
 
 
 
+[[supported-google-cloud-regions]]
 === 支持的 Google Cloud 区域
 
 支持所有地区。
 
 
 
+[[permissions-for-buckets-in-other-google-cloud-projects]]
 === 其他 Google Cloud 项目中存储桶的权限
 
 设置同步关系时，如果您向数据代理的服务帐户提供所需的权限，则可以从不同项目中的 Google Cloud 存储桶中进行选择。link:task-installing-gcp.html["了解如何设置服务帐户"] 。
 
 
 
+[[permissions-for-a-snapmirror-destination]]
 === SnapMirror目标的权限
 
 如果同步关系的源是SnapMirror目标（只读），则“读取/列出”权限足以将数据从源同步到目标。
 
 
 
+[[encrypting-a-google-cloud-bucket]]
 === 加密 Google Cloud 存储桶
 
 您可以使用客户管理的 KMS 密钥或默认的 Google 管理密钥加密目标 Google Cloud 存储桶。如果存储桶已添加了 KMS 加密，它将覆盖默认的 Google 管理加密。
 
-要添加客户管理的 KMS 密钥，您需要使用具有 https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-for-the-service-account["正确的权限"]，并且 key 必须与 bucket 位于同一区域。
+要添加客户管理的 KMS 密钥，您需要使用具有 link:task-installing-gcp.html#permissions-required-for-the-service-account["正确的权限"] 的数据代理，并且密钥必须与存储桶位于同一区域。
 
 
 
+[[google-drive]]
 == Google 云端硬盘
 
 当您设置包含 Google Drive 的同步关系时，您需要提供以下信息：
@@ -254,6 +275,7 @@ link:task-managing-data-brokers.html#set-up-a-unified-configuration["了解如�
 
 
 
+[[nfs-server-requirements]]
 == NFS 服务器要求
 
 * NFS 服务器可以是NetApp系统，也可以是非NetApp系统。
@@ -277,12 +299,14 @@ NOTE: 从ONTAP 9.2 开始，showmount 的默认设置为 _enabled_。
 
 
 
+[[ontap-requirements]]
 == ONTAP 要求
 
 如果同步关系包括Cloud Volumes ONTAP或本地ONTAP集群，并且您选择了 NFSv4 或更高版本，则需要在ONTAP系统上启用 NFSv4 ACL。这是复制 ACL 所必需的。
 
 
 
+[[ontap-s3-storage-requirements]]
 == ONTAP S3 存储要求
 
 当你设置包含以下内容的同步关系时 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3 存储"^]，您需要提供以下信息：
@@ -293,6 +317,7 @@ NOTE: 从ONTAP 9.2 开始，showmount 的默认设置为 _enabled_。
 
 
 
+[[smb-server-requirements]]
 == SMB 服务器要求
 
 * SMB 服务器可以是NetApp系统，也可以是非NetApp系统。
@@ -321,12 +346,14 @@ NOTE: 从ONTAP 9.2 开始，showmount 的默认设置为 _enabled_。
 
 
 
+[[smb-limitation-for-hidden-directories-and-files]]
 === 隐藏目录和文件的 SMB 限制
 
 在 SMB 服务器之间同步数据时，SMB 限制会影响隐藏目录和文件。如果源 SMB 服务器上的任何目录或文件通过 Windows 隐藏，则隐藏属性不会复制到目标 SMB 服务器。
 
 
 
+[[smb-sync-behavior-due-to-case-insensitivity-limitation]]
 === 由于不区分大小写限制导致的 SMB 同步行为
 
 SMB 协议不区分大小写，这意味着大写字母和小写字母被视为相同。如果同步关系包括 SMB 服务器并且目标上已存在数据，则此行为可能导致文件覆盖和目录复制错误。

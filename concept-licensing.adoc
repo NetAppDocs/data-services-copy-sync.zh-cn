@@ -20,6 +20,7 @@ summary: 14 天免费试用期结束后，您可以通过两种方式支付同�
 
 
 
+[[marketplace-subscription]]
 == 市场订阅
 
 订阅 AWS 或 Azure 的复制和同步服务可让您按小时付费或按年付费。link:task-licensing.html["您可以通过 AWS 或 Azure 订阅"] ，取决于您想要在哪里付款。
@@ -31,6 +32,7 @@ Copy and Sync 仅支持来自 **AWS** 和 **Azure** 的 Marketplace 订阅。Cop
 ====
 
 
+[[hourly-subscription]]
 === 按小时订阅
 
 通过按小时付费订阅，您将根据创建的同步关系数量按小时付费。
@@ -41,6 +43,7 @@ Copy and Sync 仅支持来自 **AWS** 和 **Azure** 的 Marketplace 订阅。Cop
 
 
 
+[[annual-subscription]]
 === 年度订阅
 
 年度订阅可提供 20 个同步关系的许可证，您需要预先付款。如果您的同步关系超过 20 个并且已通过 AWS 订阅，则您需要按小时支付额外的关系费用。
@@ -49,6 +52,7 @@ https://aws.amazon.com/marketplace/pp/B06XX5V3M2["查看 AWS 中的年度定价"
 
 
 
+[[licenses-from-netapp]]
 == NetApp的许可证
 
 预先支付同步关系费用的另一种方式是直接从NetApp购买许可证。每个许可证允许您创建最多 20 个同步关系。
@@ -59,6 +63,7 @@ link:task-licensing.html["了解如何购买许可证并将其添加到NetApp Co
 
 
 
+[[license-terms]]
 === 许可条款
 
 购买自带许可证 (BYOL) 进行复制和同步的客户应该了解与许可证权利相关的限制。

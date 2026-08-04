@@ -18,12 +18,14 @@ summary: 您可以通过各种资源（包括论坛、聊天服务和视频）�
 
 
 
+[[getting-started]]
 == 入门
 
 以下问题与开始使用NetApp Copy and Sync有关。
 
 
 
+[[how-does-netapp-copy-and-sync-work]]
 === NetApp Copy and Sync如何工作？
 
 复制和同步使用NetApp数据代理软件将数据从源同步到目标（这称为_同步关系_）。
@@ -34,12 +36,14 @@ summary: 您可以通过各种资源（包括论坛、聊天服务和视频）�
 
 
 
+[[how-does-the-14-day-free-trial-work]]
 === 14 天免费试用如何进行？
 
 当您注册 Copy and Sync 时，14 天的免费试用期就开始了。您无需为 14 天内创建的复制和同步关系支付NetApp费用。但是，您部署的任何数据代理的所有资源费用仍然适用。
 
 
 
+[[how-much-does-copy-and-sync-cost]]
 === 复制和同步的费用是多少？
 
 使用复制和同步有两种类型的成本：服务费和资源费。
@@ -66,12 +70,14 @@ NOTE: 对于Azure NetApp Files来说，复制和同步关系是免费的。
 
 
 
+[[how-is-copy-and-sync-billed-and-how-do-i-manage-my-subscription]]
 === 复制和同步如何计费以及如何管理我的订阅？
 
 14 天免费试用期结束后，您可以通过两种方式支付同步关系费用。第一个选项是从 AWS 或 Azure 订阅，这样您就可以按使用量付费或按年付费。第二种选择是直接从NetApp购买许可证。在每种情况下，您的订阅都将通过您的提供商市场进行管理，而不是通过复制和同步用户界面进行管理。
 
 
 
+[[can-i-use-copy-and-sync-outside-the-cloud]]
 === 我可以在云外使用复制和同步吗？
 
 是的，您可以在非云架构中使用复制和同步。源和目标可以驻留在本地，数据代理软件也可以驻留在本地。
@@ -84,30 +90,35 @@ NOTE: 对于Azure NetApp Files来说，复制和同步关系是免费的。
 
 
 
+[[how-do-i-access-copy-and-sync]]
 === 如何访问复制和同步？
 
 可以从NetApp Console进行复制和同步。从控制台左侧导航中，选择*移动性*>*复制和同步*。
 
 
 
+[[whats-a-data-broker-group]]
 === 什么是数据经纪人团体？
 
 每个数据经纪人都属于一个数据经纪人组。将数据代理分组在一起有助于提高同步关系的性能。
 
 
 
+[[supported-sources-and-targets]]
 == 支持的源和目标
 
 以下问题与同步关系中支持的源和目标有关。
 
 
 
+[[which-sources-and-targets-does-copy-and-sync-support]]
 === 复制和同步支持哪些源和目标？
 
 复制和同步支持多种不同类型的同步关系。link:reference-supported-relationships.html["查看完整列表"] 。
 
 
 
+[[what-versions-of-nfs-and-smb-does-copy-and-sync-support]]
 === 复制和同步支持哪些版本的 NFS 和 SMB？
 
 复制和同步支持 NFS 版本 3 及更高版本以及 SMB 版本 1 及更高版本。
@@ -116,6 +127,7 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[when-amazon-s3-is-the-target-can-the-data-be-tiered-to-a-specific-s3-storage-class]]
 === 当以 Amazon S3 为目标时，数据可以分层到特定的 S3 存储类吗？
 
 是的，当 AWS S3 是目标时，您可以选择特定的 S3 存储类：
@@ -131,6 +143,7 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[what-about-storage-tiers-for-azure-blob-storage]]
 === Azure Blob 存储的存储层怎么样？
 
 当 Blob 容器是目标时，您可以选择特定的 Azure Blob 存储层：
@@ -141,6 +154,7 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[do-you-support-google-cloud-storage-tiers]]
 === 您是否支持 Google Cloud 存储层？
 
 是的，当 Google Cloud Storage 存储桶是目标时，您可以选择特定的存储类别：
@@ -153,12 +167,14 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[networking]]
 == 网络连接
 
 以下问题与复制和同步的网络要求有关。
 
 
 
+[[what-are-the-networking-requirements-for-copy-and-sync]]
 === 复制和同步的网络要求是什么？
 
 复制和同步环境要求数据代理组通过所选协议或对象存储 API（Amazon S3、Azure Blob、IBM Cloud Object Storage）与源和目标连接。
@@ -169,6 +185,7 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[can-i-use-a-proxy-server-with-the-data-broker]]
 === 我可以将代理服务器与数据代理一起使用吗？
 
 是
@@ -179,12 +196,14 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[data-synchronization]]
 == 数据同步
 
 以下问题与数据同步的工作原理有关。
 
 
 
+[[how-often-does-synchronization-occur]]
 === 同步发生的频率是多少？
 
 默认计划设置为每日同步。初始同步后，您可以：
@@ -196,12 +215,14 @@ link:reference-requirements.html["详细了解同步要求"] 。
 
 
 
+[[what-is-the-minimum-sync-schedule]]
 === 最小同步计划是多少？
 
 您可以安排每 1 分钟同步一次数据。
 
 
 
+[[does-the-data-broker-group-retry-when-a-file-fails-to-sync-or-does-it-timeout]]
 === 当文件同步失败时，数据代理组是否会重试？或者它超时了吗？
 
 当单个文件传输失败时，数据代理组不会超时。相反，数据代理组在跳过该文件之前会重试 3 次。重试值可以在同步关系的设置中配置。
@@ -210,6 +231,7 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[what-if-i-have-a-very-large-dataset]]
 === 如果我有一个非常大的数据集怎么办？
 
 如果单个目录包含 600,000 个或更多文件，link:task-get-help.html["联系我们"]以便我们可以帮助您配置数据代理组来处理有效负载。我们可能需要向数据代理组添加额外的内存。
@@ -218,12 +240,14 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[security]]
 == 安全性
 
 以下问题与安全有关。
 
 
 
+[[is-copy-and-sync-secure]]
 === 复制和同步安全吗？
 
 是所有复制和同步网络连接均使用 https://aws.amazon.com/sqs/["亚马逊简单队列服务 (SQS)"^]。
@@ -241,6 +265,7 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[is-data-encrypted-by-copy-and-sync]]
 === 复制和同步是否加密数据？
 
 * 复制和同步支持源和目标 NFS 服务器之间的数据传输加密。link:task-nfs-encryption.html["了解更多"] 。
@@ -254,12 +279,14 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[permissions]]
 == 权限
 
 以下问题与数据权限有关。
 
 
 
+[[are-smb-data-permissions-synced-to-the-target-location]]
 === SMB 数据权限是否同步到目标位置？
 
 您可以设置复制和同步以保留源 SMB 共享和目标 SMB 共享之间以及从源 SMB 共享到对象存储（ ONTAP S3 除外）的访问控制列表 (ACL)。
@@ -274,6 +301,7 @@ NOTE: Copy Sync 会复制 SMB ACL（权限），但不会复制文件或文件�
 
 
 
+[[are-nfs-data-permissions-synced-to-the-target-location]]
 === NFS 数据权限是否同步到目标位置？
 
 复制和同步会自动在 NFS 服务器之间复制 NFS 权限，如下所示：
@@ -284,10 +312,12 @@ NOTE: Copy Sync 会复制 SMB ACL（权限），但不会复制文件或文件�
 
 
 
+[[object-storage-metadata]]
 == 对象存储元数据
 
 
 
+[[what-kinds-of-sync-relationships-preserve-object-storage-metadata]]
 === 哪些类型的同步关系可以保留对象存储元数据？
 
 复制和同步将对象存储元数据从源复制到目标，以实现以下类型的同步关系：
@@ -311,24 +341,28 @@ NOTE: Copy Sync 会复制 SMB ACL（权限），但不会复制文件或文件�
 
 
 
+[[what-kinds-of-metadata-are-replicated-during-syncs-where-nfs-or-smb-are-the-source]]
 === 在以 NFS 或 SMB 为源的同步过程中，会复制哪些类型的元数据？
 
 默认情况下会复制用户 ID、修改时间、访问时间和 GID 等元数据。用户可以在创建同步关系时将其标记为必需，从而选择从 CIF 复制 ACL。
 
 
 
+[[performance]]
 == 性能
 
 以下问题与复制和同步性能有关。
 
 
 
+[[what-does-the-progress-indicator-for-a-sync-relationship-represent]]
 === 同步关系的进度指示器代表什么？
 
 同步关系显示数据代理组网络适配器的吞吐量。如果您使用多个数据代理来加速同步性能，那么吞吐量就是所有流量的总和。此吞吐量每 20 秒刷新一次。
 
 
 
+[[im-experiencing-performance-issues-can-we-limit-the-number-of-concurrent-transfers]]
 === 我遇到了性能问题。我们可以限制并发传输的数量吗？
 
 如果您有非常大的文件（每个文件有多个 TiB），则完成传输过程可能需要很长时间，并且性能可能会受到影响。
@@ -337,6 +371,7 @@ NOTE: Copy Sync 会复制 SMB ACL（权限），但不会复制文件或文件�
 
 
 
+[[why-am-i-experiencing-low-performance-with-azure-netapp-files]]
 === 为什么我的Azure NetApp Files性能低下？
 
 当您将数据同步到Azure NetApp Files或从 Azure NetApp Files 同步数据时，如果磁盘服务级别为标准，则可能会遇到故障和性能问题。
@@ -347,6 +382,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[how-many-data-brokers-are-required-in-a-group]]
 === 一个集团需要多少个数据经纪人？
 
 当您创建新的关系时，您从组中的单个数据代理开始（除非您选择了属于加速同步关系的现有数据代理）。在许多情况下，单个数据代理可以满足同步关系的性能要求。如果没有，您可以通过向组中添加额外的数据代理来加速同步性能。但您应该首先检查可能影响同步性能的其他因素。
@@ -359,18 +395,21 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[deleting-things]]
 == 删除内容
 
 以下问题与从源和目标删除同步关系和数据有关。
 
 
 
+[[what-happens-if-i-delete-my-copy-and-sync-relationship]]
 === 如果我删除复制和同步关系会发生什么？
 
 删除关系将停止所有未来的数据同步并终止付款。同步到目标的任何数据都保持原样。
 
 
 
+[[what-happens-if-i-delete-something-from-my-source-server-is-it-removed-from-the-target-too]]
 === 如果我从源服务器中删除某些内容会发生什么？它也从目标中移除了吗？
 
 默认情况下，如果您具有活动的同步关系，则在源服务器上删除的项目不会在下次同步期间从目标服务器上删除。但是每个关系的同步设置中都有一个选项，您可以在其中定义如果从源中删除了文件，则复制和同步将删除目标位置中的文件。
@@ -379,24 +418,28 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[what-happens-if-i-delete-something-from-my-target-is-it-removed-from-my-source-too]]
 === 如果我从目标中删除某些内容会发生什么？它也从我的来源中删除了吗？
 
 如果从目标中删除某个项目，则它不会从源中删除。这种关系是单向的——从源到目标。在下一个同步周期中，“复制和同步”会将源与目标进行比较，识别出该项目缺失，然后“复制和同步”会再次将其从源复制到目标。
 
 
 
+[[troubleshooting]]
 == 故障排除
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Sync/Cloud_Sync_FAQ:_Support_and_Troubleshooting["NetApp知识库：复制和同步常见问题解答：支持和故障排除"^]
 
 
 
+[[data-broker-deep-dive]]
 == 数据经纪人深度探究
 
 以下问题与数据经纪人有关。
 
 
 
+[[can-you-explain-the-architecture-of-the-data-broker]]
 === 您能解释一下数据代理的架构吗？
 
 当然。以下是最重要的几点：

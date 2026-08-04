@@ -18,12 +18,14 @@ NetApp Copy and Sync中的数据代理组将数据从源位置同步到目标位
 
 
 
+[[how-data-broker-groups-work]]
 == 数据经纪人团体如何运作
 
 数据代理组可以包括一个或多个数据代理。将数据代理分组在一起可以帮助提高同步关系的性能。
 
 
 
+[[groups-can-manage-several-relationships]]
 === 组可以管理多个关系
 
 数据代理组可以同时管理一个或多个同步关系。
@@ -39,12 +41,14 @@ NetApp Copy and Sync中的数据代理组将数据从源位置同步到目标位
 
 
 
+[[number-of-data-brokers-in-a-group]]
 === 一个组中的数据代理数量
 
 在许多情况下，单个数据代理可以满足同步关系的性能要求。如果没有，您可以通过向组中添加额外的数据代理来加速同步性能。但您应该首先检查可能影响同步性能的其他因素。link:faq.html#how-many-data-brokers-are-required-in-a-group["详细了解如何确定何时需要多个数据代理"] 。
 
 
 
+[[security-recommendations]]
 == 安全建议
 
 为了确保数据代理机器的安全， NetApp建议采取以下措施：
@@ -59,6 +63,7 @@ NetApp Copy and Sync中的数据代理组将数据从源位置同步到目标位
 
 
 
+[[add-a-new-data-broker-to-a-group]]
 == 将新的数据代理添加到组
 
 创建新的数据代理有多种方法：
@@ -118,6 +123,7 @@ image:screenshot_sync_group_add.png["组中每个单独的数据代理可用的�
 
 
 
+[[edit-a-groups-name]]
 == 编辑群组名称
 
 随时更改数据代理组的名称。
@@ -137,6 +143,7 @@ image:screenshot_sync_group_edit.gif["组中每个单独的数据代理可用的
 
 
 
+[[set-up-a-unified-configuration]]
 == 设置统一配置
 
 如果同步关系在同步过程中遇到错误，统一数据代理组的并发可以帮助减少同步错误的数量。请注意，更改组配置可能会减慢传输速度，从而影响性能。
@@ -166,6 +173,7 @@ image:screenshot_sync_group_settings.png["显示数据经纪人组的设置图�
 
 
 
+[[move-data-brokers-between-groups]]
 == 在组之间移动数据代理
 
 如果您需要加速目标数据代理组的性能，请将数据代理从一个组移动到另一个组。
@@ -195,6 +203,7 @@ image:screenshot_sync_group_remove.png["每个单独的数据代理组可用的�
 
 
 
+[[update-proxy-configuration]]
 == 更新代理配置
 
 通过添加有关新代理配置的详细信息或编辑现有代理配置来更新数据代理的代理配置。
@@ -213,6 +222,7 @@ image:screenshot_sync_group_remove.png["每个单独的数据代理组可用的�
 
 
 
+[[view-a-data-brokers-configuration]]
 == 查看数据代理的配置
 
 您可能想要查看有关数据代理的详细信息，以识别其主机名、IP 地址、可用 CPU 和 RAM 等信息。
@@ -242,6 +252,7 @@ image:screenshot_sync_data_broker_details.gif["有关数据经纪人的信息的
 
 
 
+[[address-issues-with-a-data-broker]]
 == 解决数据代理问题
 
 复制和同步显示每个数据代理的状态，可以帮助您解决问题。
@@ -261,6 +272,7 @@ image:screenshot_sync_broker_status.gif["复制和同步状态显示的屏幕截
 
 
 
+[[remove-a-data-broker-from-a-group]]
 == 从组中删除数据代理
 
 如果不再需要数据代理或初始部署失败，您可以从组中删除该数据代理。此操作仅从复制和同步的记录中删除数据代理。您需要手动删除数据代理和任何其他云资源。
@@ -286,6 +298,7 @@ image:screenshot_sync_group_remove.gif["每个单独的数据代理组可用的�
 
 
 
+[[delete-a-data-broker-group]]
 == 删除数据代理组
 
 如果数据代理组不再管理任何同步关系，您可以删除该组，这将从复制和同步中删除所有数据代理。

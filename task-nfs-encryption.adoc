@@ -20,6 +20,7 @@ summary: 如果您的企业有严格的安全策略，请使用动态数据加�
 
 
 
+[[how-data-in-flight-encryption-works]]
 == 数据传输加密的工作原理
 
 当 NFS 数据在两个数据代理之间通过网络发送时，数据传输加密会对其进行加密。下图显示了两个 NFS 服务器和两个数据代理之间的关系：
@@ -44,6 +45,7 @@ image:diagram_nfs_encryption.gif["显示两个 NFS 服务器和两个数据代�
 
 
 
+[[supported-nfs-versions]]
 == 支持的 NFS 版本
 
 * 对于 NFS 服务器，NFS 版本 3、4.0、4.1 和 4.2 支持数据传输加密。
@@ -52,12 +54,14 @@ image:diagram_nfs_encryption.gif["显示两个 NFS 服务器和两个数据代�
 
 
 
+[[proxy-server-limitation]]
 == 代理服务器限制
 
 如果您创建加密同步关系，则加密数据将通过 HTTPS 发送，并且无法通过代理服务器路由。
 
 
 
+[[what-youll-need-to-get-started]]
 == 入门所需
 
 请确保具备以下条件：
@@ -85,6 +89,7 @@ image:diagram_nfs_encryption.gif["显示两个 NFS 服务器和两个数据代�
 
 
 
+[[sync-nfs-data-using-data-in-flight-encryption]]
 == 使用数据传输加密同步 NFS 数据
 
 在两个 NFS 服务器之间或Azure NetApp Files之间创建新的同步关系，启用动态加密选项，然后按照提示进行操作。

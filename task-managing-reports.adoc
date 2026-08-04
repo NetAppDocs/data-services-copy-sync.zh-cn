@@ -16,10 +16,11 @@ summary: 创建和查看报告以获取信息，您可以在NetApp人员的帮�
 [role="lead"]
 在NetApp Copy and Sync中创建和查看报告以获取可在NetApp人员的帮助下调整数据代理的配置并提高性能的信息。
 
-每份报告都提供有关同步关系中路径的详细信息。它将包括有多少个目录、文件和符号链接、文件大小的分布、目录的深度和宽度、修改时间和访问时间。这与同步静态数据不同，后者可在 https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["成功创建并完成同步"]。
+每个报告都提供有关同步关系中路径的深入详细信息。它将包括有多少目录、文件和符号链接、文件大小的分布、目录的深度和宽度、修改时间和访问时间。这与同步统计信息不同，后者可在控制面板中 link:task-creating-relationships.html["成功创建并完成同步"] 后找到。
 
 
 
+[[create-reports]]
 == 创建报告
 
 每次创建报告时，“复制和同步”都会扫描路径，然后将详细信息编译成报告。
@@ -48,6 +49,7 @@ image:screenshot_sync_report_object.gif["显示路径项数量、对象大小、
 
 
 
+[[download-reports]]
 == 下载报告
 
 您可以下载 PDF 格式的报告，以便离线查看或共享。
@@ -64,6 +66,7 @@ image:screenshot-sync-download-report.png["在报告中选择操作菜单后出�
 
 
 
+[[view-report-errors]]
 == 查看报告错误
 
 路径表标识最新报告中是否存在任何错误。错误标识了复制和同步在扫描路径时遇到的问题。
@@ -88,6 +91,7 @@ image:screenshot_sync_report_errors.gif["路径表的屏幕截图显示了错误
 
 
 
+[[delete-reports]]
 == 删除报告
 
 如果报告包含您已修复的错误，或者报告与您已删除的同步关系相关，您可以删除该报告。

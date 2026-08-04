@@ -18,12 +18,14 @@ NetApp Copy and Sync的网络包括数据代理组与源位置和目标位置之
 
 
 
+[[data-broker-location]]
 == 数据代理位置
 
 数据代理组由安装在云端或您的场所的一个或多个数据代理组成。
 
 
 
+[[data-broker-in-the-cloud]]
 === 云端数据代理
 
 下图显示了在 AWS、Google Cloud 或 Azure 云中运行的数据代理。只要与数据代理有连接，源和目标就可以位于任何位置。例如，您可能有一个从数据中心到云提供商的 VPN 连接。
@@ -35,6 +37,7 @@ image:diagram_networking_cloud2.png["该图表显示了复制和同步、在云�
 
 
 
+[[data-broker-on-your-premises]]
 === 您所在地的数据代理
 
 下图显示了在数据中心内部运行的数据代理。同样，只要与数据代理有连接，源和目标就可以位于任何位置。
@@ -43,6 +46,7 @@ image:diagram_networking_onprem.png["该图显示了复制和同步、在本地�
 
 
 
+[[networking-requirements]]
 == 网络要求
 
 * 源和目标必须与数据代理组有网络连接。
@@ -55,12 +59,14 @@ image:diagram_networking_onprem.png["该图显示了复制和同步、在本地�
 
 
 
+[[networking-endpoints]]
 == 网络端点
 
 NetApp数据代理需要通过端口 443 进行出站互联网访问，以便与 Copy 和 Sync 进行通信并联系其他一些服务和存储库。您的本地网络浏览器也需要访问端点才能执行某些操作。如果您需要限制出站连接，请在为出站流量配置防火墙时参考以下端点列表。
 
 
 
+[[data-broker-endpoints]]
 === 数据代理端点
 
 数据代理联系以下端点：
@@ -116,6 +122,7 @@ NetApp数据代理需要通过端口 443 进行出站互联网访问，以便与
 |===
 
 
+[[web-browser-endpoints]]
 === Web 浏览器端点
 
 您的 Web 浏览器需要访问以下端点来下载日志以进行故障排除：

@@ -32,6 +32,7 @@ summary: 当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步�
 
 
 
+[[prepare-the-vault]]
 == 准备保管库
 
 您需要提供复制和同步到您的保险库中的秘密的 URL。通过设置这些 URL 来准备保管库。您需要为您计划创建的同步关系中的每个源和目标设置凭据的 URL。
@@ -48,6 +49,7 @@ URL 必须按如下方式设置：
 
 
 
+[[examples]]
 === 示例
 
 以下示例显示了机密的 URL。
@@ -68,6 +70,7 @@ URL 必须按如下方式设置：
 
 
 
+[[prepare-the-data-broker-group]]
 == 准备数据经纪人组
 
 通过修改组中每个数据代理的本地配置文件，准备数据代理组从外部保险库获取凭据。
@@ -152,6 +155,7 @@ Secretid 和 rootid::
 
 
 
+[[example-for-aws-role-authentication]]
 === aws-role 身份验证示例
 
 [source, json]
@@ -173,6 +177,7 @@ Secretid 和 rootid::
 ----
 
 
+[[example-for-gcp-iam-authentication]]
 === gcp-iam 身份验证示例
 
 [source, json]
@@ -202,6 +207,7 @@ Secretid 和 rootid::
 ----
 
 
+[[set-up-permissions-when-using-gcp-iam-authentication]]
 === 使用 gcp-iam 身份验证时设置权限
 
 如果您使用 _gcp-iam_ 身份验证方法，则数据代理必须具有以下 GCP 权限：
@@ -214,6 +220,7 @@ link:task-installing-gcp.html#permissions-required-for-the-service-account["详�
 
 
 
+[[creating-a-new-sync-relationship-using-secrets-from-the-vault]]
 == 使用保管库中的机密创建新的同步关系
 
 现在一切都已设置完毕，您可以发送 API 调用来创建使用您的保险库获取机密的同步关系。
@@ -235,6 +242,7 @@ Body: post relationship v2 body
 
 
 
+[[example]]
 === 示例
 
 POST 请求示例：

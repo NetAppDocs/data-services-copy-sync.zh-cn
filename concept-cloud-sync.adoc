@@ -18,6 +18,7 @@ NetApp Copy and Sync提供了一种简单、安全且自动化的方式，可将
 
 
 
+[[netapp-console]]
 == NetApp Console
 
 可以通过NetApp Console访问NetApp Copy and Sync 。
@@ -26,10 +27,11 @@ NetApp Console提供企业级跨本地和云环境的NetApp存储和数据服务
 
 您不需要许可证或订阅即可开始使用NetApp Console，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
 
-详细了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
+详细了解 https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Console"]。
 
 
 
+[[how-netapp-copy-and-sync-works]]
 == NetApp Copy and Sync的工作原理
 
 NetApp Copy and Sync是一个软件即服务 (SaaS) 平台，由数据代理组、可通过NetApp Console访问的基于云的界面以及源和目标组成。
@@ -44,6 +46,7 @@ NetApp数据代理软件将数据从源同步到目标（这称为_同步关系_
 
 
 
+[[supported-storage-types]]
 == 支持的存储类型
 
 复制和同步支持以下存储类型：
@@ -71,6 +74,7 @@ link:reference-supported-relationships.html["查看支持的同步关系"] 。
 
 
 
+[[costs]]
 == 成本
 
 使用复制和同步涉及两种类型的成本：资源费用和服务费用。

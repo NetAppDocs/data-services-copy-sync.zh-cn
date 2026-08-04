@@ -18,6 +18,7 @@ summary: 创建新的数据代理时，请选择 On-Prem Data Broker 选项在�
 
 
 
+[[linux-host-requirements]]
 == Linux 主机要求
 
 * *Node.js 兼容性*：v25.x
@@ -50,12 +51,14 @@ SELinux 强制执行阻止数据代理软件更新的策略，并可以阻止数
 
 
 
+[[root-privileges]]
 == Root权限
 
 数据代理软件在 Linux 主机上自动以 root 身份运行。以 root 身份运行是数据代理操作的必要条件。例如，挂载共享。
 
 
 
+[[networking-requirements]]
 == 网络要求
 
 * Linux 主机必须与源和目标建立连接。
@@ -66,6 +69,7 @@ SELinux 强制执行阻止数据代理软件更新的策略，并可以阻止数
 
 
 
+[[enable-access-to-aws]]
 == 启用对 AWS 的访问
 
 如果您计划使用包含 S3 存储桶的同步关系的数据代理，那么您应该准备好 Linux 主机以供 AWS 访问。安装数据代理时，您需要为具有编程访问权限和特定权限的 AWS 用户提供 AWS 密钥。
@@ -86,6 +90,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html["查看 AW
 
 
 
+[[enable-access-to-google-cloud]]
 == 启用对 Google Cloud 的访问
 
 如果您计划使用包含 Google Cloud Storage 存储桶的同步关系的数据代理，那么您应该准备 Linux 主机以供 Google Cloud 访问。安装数据代理时，您需要为具有特定权限的服务帐户提供密钥。
@@ -108,12 +113,14 @@ NOTE: 当您创建密钥时，文件就会生成并下载到您的机器上。
 
 
 
+[[enable-access-to-microsoft-azure]]
 == 启用对 Microsoft Azure 的访问
 
 通过在同步关系向导中提供存储帐户和连接字符串来定义每个关系对 Azure 的访问。
 
 
 
+[[install-the-data-broker]]
 == 安装数据代理
 
 创建同步关系时，您可以在 Linux 主机上安装数据代理。
