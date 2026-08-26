@@ -639,7 +639,6 @@
   <block id="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="paragraph"><block ref="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a7470fea96bed8b75bf17e5f07e01a4" category="list-text">[[settings]]在“*设置*”页面上，定义如何在目标位置同步和维护源文件和文件夹：</block>
   <block id="25f7347236b51a5eae4ba01a7862cb55" category="list-text">计划</block>
-  <block id="3e8e8a2afdd515355f098433677b9baa" category="list-text">选择未来同步的重复计划或关闭同步计划。您可以安排每 1 分钟同步一次数据。</block>
   <block id="64b10e9eb890594a5a1756353aca634b" category="list-text">同步超时</block>
   <block id="3231a933fa5fac58c16e6d443f352009" category="list-text">定义如果同步在指定的分钟数、小时数或天数内未完成，复制和同步是否应取消数据同步。</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="list-text">通知</block>
@@ -1985,4 +1984,6 @@
   <block id="23239688169f4a4cc657d5ef5443f34b" category="paragraph"><block ref="23239688169f4a4cc657d5ef5443f34b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7bed8c71bfbfa7b7847f7029d0d74ccc" category="paragraph"><block ref="7bed8c71bfbfa7b7847f7029d0d74ccc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
+  <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">当您设置计划时，您必须输入*下一次同步将自动开始*的值。Copy and Sync 使用 *UTC*，而不是本地时间。在设置预定时间时请相应地进行规划。</block>
+  <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">为将来的同步选择定期计划或关闭同步计划。您可以将关系计划为每 1 分钟同步一次数据。计划也可以设置为每小时和每天的频率。</block>
 </blocks>
