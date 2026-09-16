@@ -4,7 +4,7 @@ permalink: task-licensing.html
 keywords: license, subscription, registering, subscribing, subscribing in aws, subscribing in azure, subscribing to aws, subscribing to azure, aws marketplace, azure marketplace, netapp license, byol license, purchase a license, license settings, pay for relationships, paygo, annual, pay-as-you-go 
 summary: 14 天免费试用期结束后，您可以通过两种方式支付同步关系费用。第一个选择是现收现付。第二种选择是直接从NetApp购买许可证。 
 ---
-= NetApp Copy and Sync免费试用期结束后，支付同步关系费用
+= 在 NetApp Copy and Sync 中为同步关系付费
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

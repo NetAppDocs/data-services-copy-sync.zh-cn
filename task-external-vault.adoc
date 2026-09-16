@@ -4,7 +4,7 @@ permalink: task-external-vault.html
 keywords: hashicorp, vault, credentials, secrets, API 
 summary: 当您创建需要 Amazon S3、Azure 或 Google Cloud 凭据的同步关系时，您需要通过NetApp Copy and Sync用户界面或 API 指定这些凭据。另一种方法是设置数据代理以直接从外部 HashiCorp Vault 访问凭据。 
 ---
-= 设置数据代理组以在NetApp Copy and Sync中使用外部 HashiCorp Vault
+= 为 HashiCorp Vault 设置 NetApp Copy and Sync 数据代理组
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
