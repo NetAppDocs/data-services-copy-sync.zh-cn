@@ -37,7 +37,7 @@ Copy and Sync 仅支持来自 **AWS** 和 **Azure** 的 Marketplace 订阅。Cop
 
 通过按小时付费订阅，您将根据创建的同步关系数量按小时付费。
 
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["查看 Azure 中的定价"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["查看 Azure 中的定价"^]
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["查看 AWS 中的按使用量付费定价"^]
 
 

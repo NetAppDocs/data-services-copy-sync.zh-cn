@@ -262,7 +262,7 @@ TIP: 将数据同步到StorageGRID和 IBM Cloud Object Storage 时，此功能�
 
 *结果*
 
-Copy and Sync 开始在源和目标之间同步数据。有关同步花费的时间、同步是否停止以及复制、扫描或删除的文件数量的同步统计信息可用。然后，您可以管理link:task-managing-relationships.html["同步关系"]、link:task-managing-data-brokers.html["管理您的数据经纪人"]或link:task-managing-reports.html#creating-reports["创建报告以优化您的性能和配置"]。
+Copy and Sync 开始在源和目标之间同步数据。有关同步花费的时间、同步是否停止以及复制、扫描或删除的文件数量的同步统计信息可用。然后，您可以管理link:task-managing-relationships.html["同步关系"]、link:task-managing-data-brokers.html["管理您的数据经纪人"]或link:task-managing-reports.html["创建报告以优化您的性能和配置"]。
 
 
 

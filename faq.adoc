@@ -54,7 +54,7 @@ summary: 您可以通过各种资源（包括论坛、聊天服务和视频）�
 
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["查看 AWS 中的按使用量付费定价"^]
 * https://aws.amazon.com/marketplace/pp/B06XX5V3M2["查看 AWS 中的年度定价"^]
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["查看 Azure 中的定价"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["查看 Azure 中的定价"^]
 
 
 您还可以通过NetApp代表获得复制和同步许可证。每个许可证可启用 12 个月的 20 个同步关系。
