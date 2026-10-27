@@ -15,8 +15,6 @@
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">NetApp Console发行说明</block>
   <block id="07a0717927710f1dcb5683cb20238dcb" category="paragraph">有关更改的详细信息，请参阅<block ref="a3987562479f1a66db4eec298b79e00c" category="inline-link-macro-rx"></block>。</block>
   <block id="d7e55ebe5996d2f4a71007c5b1e1a8f4" category="summary">可通过 Web UI 使用的NetApp Copy and Sync功能也可通过 RESTful API 使用。</block>
-  <block id="fd59b601807b541345b87130ff3bbd48" category="doc">NetApp Copy and SyncAPI</block>
-  <block id="1a7f2c01296bcc340aecf2c150c0dec3" category="paragraph">可通过 Web UI 使用的NetApp Copy and Sync功能也可通过 RESTful API 使用。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="section-title">开始使用</block>
   <block id="7ec5388381b24f73dd0eed840e406178" category="paragraph">要开始使用复制和同步 API，您需要获取用户令牌和NetApp Console帐户 ID。进行 API 调用时，您需要将令牌和帐户 ID 添加到授权标头。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
@@ -1970,7 +1968,6 @@
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
   <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">当您设置计划时，您必须输入*下一次同步将自动开始*的值。Copy and Sync 使用 *UTC*，而不是本地时间。在设置预定时间时请相应地进行规划。</block>
   <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">为将来的同步选择定期计划或关闭同步计划。您可以将关系计划为每 1 分钟同步一次数据。计划也可以设置为每小时和每天的频率。</block>
-  <block id="40d8a3c56d215e830feb9897421666aa" category="doc">了解 NetApp Copy and Sync 中的许可</block>
   <block id="ae93ff3e8a6fd875fb9dfdd2fbbbf45f" category="doc">NetApp Copy and Sync 技术常见问题解答</block>
   <block id="6809b01eb3405addc3e0512ed7f6cf9e" category="doc">NetApp Copy and Sync 的网络要求</block>
   <block id="db37b7240360f352ce5e2bdb05b9f077" category="doc">NetApp Copy and Sync 的源和目标要求</block>
@@ -1984,4 +1981,7 @@
   <block id="f872b6fc1ee78b996195a40e069beff7" category="list-text"><block ref="f872b6fc1ee78b996195a40e069beff7" category="inline-link-rx"></block></block>
   <block id="c067d1adda8060b12c3ecf15c1e29766" category="paragraph">Copy and Sync 开始在源和目标之间同步数据。有关同步花费的时间、同步是否停止以及复制、扫描或删除的文件数量的同步统计信息可用。然后，您可以管理<block ref="6d7776ec96aeaba5af380a54aca37776" category="inline-link-macro-rx"></block>、<block ref="a032e3bf506f732a0e85caa4ad9deb9d" category="inline-link-macro-rx"></block>或<block ref="ac5b6b02729c5e0b93891b823e28e426" category="inline-link-macro-rx"></block>。</block>
   <block id="8956bebbad93fd0bc94eb7cb7a6eedea" category="paragraph"><block ref="b19ea243cd5e3ea52015c74405abe62c" prefix="" category="inline-code"></block></block>
+  <block id="ac59c297ac7334b9be59392607f97254" category="doc">连接到 NetApp Copy and Sync API</block>
+  <block id="179cd4e2019e6bd0efc41a52dd0309ce" category="paragraph">Web UI 中提供的 NetApp Copy and Sync 功能也可以通过 REST API 使用。</block>
+  <block id="1ca5468c0099601dc8f36fcd68af7a67" category="doc">NetApp Copy and Sync 中的许可选项</block>
 </blocks>
